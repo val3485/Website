@@ -16,7 +16,7 @@ function addDashboard(){
                     </div>
                 </a>
                 <div id="end-div">
-                    <p onclick="sidebar();sidebar2()">shop</p>
+                    <p onclick="sidebar()">shop</p>
                    
                     <p><a href="./aboutUs.html" id="abt_us">About us</a></p>
                     <a href="./cart.html">

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #9b4f4f;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #e3c49d;
+  color: #3b2a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.user-profile {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  background-color: #d6b38a;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.role {
+  font-size: 0.8rem;
+  color: #654a2b;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #3b2a1a;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.menu a.active,
+.menu a:hover {
+  background-color: #cfa87d;
+}
+
+.signout {
+  text-decoration: none;
+  color: #b03030;
+  font-weight: 600;
+}
+
+/* Main */
+.main-content {
+  flex: 1;
+  background-color: #3b2a1a;
+  color: #fff;
+  padding: 2rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background-color: #d8b77a;
+  color: #3b2a1a;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.card.full {
+  grid-column: 1 / -1;
+}
+
+canvas {
+  width: 100%;
+  height: 200px;
+}
