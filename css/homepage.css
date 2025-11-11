@@ -67,6 +67,7 @@
     z-index: 2;
 }
 .entry2{
+    margin-top: 100px;
     display: flex;
     gap: 8vw;
     padding: 5vw;
@@ -91,6 +92,105 @@
 }
 #view-menu:hover{
     font-size: 21px;
+}
+.banner{
+    margin-top: 50px;
+}
+.banner > p{
+    text-align: center;
+    font-family: 'brs';
+    color: #452B1E;
+    font-size: 20px;
+}
+.bnnr-img{
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bnnr-img:hover{
+    scale: 105%;
+}
+.bnnr-con{
+    height: 320px;
+    display: flex; 
+    justify-content: space-between;
+    padding: 5vw;
+    display: flex;
+    background: linear-gradient(0.25turn,  #733015, #84592E);
+}
+.follow-us{
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+    justify-content: space-between;
+    font-family: 'afc';
+    color: #452B1E;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.follow-us > div > img{
+    width: 30px;
+    height: 30px;
+    align-self: center;
+}
+.follow-us > div {
+    gap: 5px;
+    display: flex;
+}
+.highlights{
+    margin: 5vw;
+    padding-top: 50px;
+}
+.highlights > h1{
+    text-align: center;
+    font-family: 'brs';
+    color: #452B1E;
+    margin-bottom: 40px;
+}
+.highlights-img  {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    justify-content: space-between;
+    margin-right: 10vw;
+    margin-left: 10vw;
+}
+.highlights-img > div:hover{
+    scale: 105%;
+}
+.highlights-img > div{
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.highlights-img > div > p{
+    /* display: flex; */
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+    margin-left: 20px;
+    color: aliceblue;
+    font-family: 'brs';
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+.highlights-img > img{
+    /* display: flex; */
+    position: absolute;
+    z-index: 0;
+    border-radius: 10px;
+}
+.highlights-img > div > img{
+    border-radius: 10px;
+}
+.highlights-img > p{
+    display: flex;
+    position: absolute;
+    z-index: 1;
+}
+.highlights > div > div > img{
+    object-fit: cover;
+    width: 300px;
 }
 /* tablet */
 @media  (max-width: 890px) {

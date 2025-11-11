@@ -1,0 +1,29 @@
+.header{
+    margin-top: 15vh;
+    margin-left: 10vh;
+    font-family: 'brs';
+    color: #4C100F;
+}
+.header >  h3{
+    margin-top: -10px;
+    opacity: 60%;
+}
+.desc{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    color: #4C100F;
+}
+.desc > .head >  div {
+    height: 230px;
+    /* border: solid #fff 2px; */
+    font-family: 'brs';
+    margin-left: 100px;
+}
+.desc > .desc2 >  div {
+    height: 230px;
+    /* border: solid #fff 2px; */
+    font-family: 'afc';
+    font-size: 20px;
+    width: 60vw;
+}

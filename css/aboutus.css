@@ -1,0 +1,86 @@
+.bg > img{
+    object-fit: cover;
+    height: 80vh;
+    width: 100%;
+    opacity: 30%;
+    z-index: 0;
+    position: absolute;
+}
+.bg >  div{
+    position: absolute;
+    z-index: 10;
+    bottom: 10px;
+    margin-left: 20px;
+    color: aliceblue;
+    width: 45vw;
+}
+.bg >  div > h1{
+    font-family: 'brs';
+    font-size: 64px;
+}
+.bg >  div > p{
+    font-family: 'afc';
+    font-size: 20px;
+    margin-top: -30px;
+}
+.bg{
+    background-color: #452B1E;
+    height: 80vh;
+    position: relative;
+}
+.abt-p{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    color: #452B1E;
+}
+.abt-p > div{
+    width: 50vw;
+}
+.abt-p > div > h1{
+    text-align: center;
+    font-family: 'brs';
+    font-size: 32px;
+}
+.abt-p > div > p{
+    text-align: center;
+    font-family: 'afc';
+    font-size: 20px;
+}
+.mssn-vssn {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    color: #452B1E;
+}
+.mssn-vssn > div {
+    width: 30vw;
+}
+.mssn-vssn > div > div{
+    display: flex;
+    justify-content: center;
+}
+.mssn-vssn > div > div > div{
+   background-color: #733015;
+   opacity: 70%;
+   border-radius: 20px;
+   padding: 20px;
+}
+.mssn-vssn > div > div > div > img{
+   width: 200px;
+}
+.mssn-vssn >  div > h2, p {
+    text-align: center;
+}
+.mssn-vssn >  div > h2{
+    text-align: center;
+    font-family: 'brs';
+}
+.mssn-vssn >  div > p{
+    text-align: center;
+    font-family: 'afc';
+    font-size: 16px;
+}
