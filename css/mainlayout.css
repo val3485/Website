@@ -38,6 +38,9 @@ body{
     padding-left: 40px;
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.h1bttn:hover{
+    background-color: #908359;
+}
 #con{
     margin-top: 8vh;
 }
@@ -101,6 +104,7 @@ body{
     font-size: 25px;
 }
 #side-bar{
+    color: #452B1E;
     background-color: #E9D0A7;
     padding: 2vh;
     z-index: 70; 
