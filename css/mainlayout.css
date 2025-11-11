@@ -27,6 +27,76 @@ body{
     margin: 0;
     background-color: #E9D0A7;
 }
+.footer{
+    margin-top: 200px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.footer > img{
+    object-fit: fill;
+    width: 100%;
+    height: fit-content;
+}
+.footer >  div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    position: absolute;
+    width: 80%;
+    height:  35vh;
+    justify-content: space-between;
+    top: 0;
+}
+.footer > div > div {
+    position: relative;
+    top: 30px;
+    width: 200px;
+    z-index: 1;
+    align-self: flex-end;
+}
+.footer > div > div > img{
+    object-fit: fill;
+    width:  150px;
+    height: fit-content;
+    align-self: center;
+}
+.footer > div > div > #p{
+    font-family: 'lpp';
+    color: aliceblue;
+    font-size: 30px;
+}
+.logoFooter{
+    width: 10%;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    height: fit-content;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.logoFooter > p {
+    font-family: 'lpp';
+    font-size: 25px;
+}
+.details > p{
+    font-family: 'afc';
+}
+.pages > div > p{
+    font-family: 'afc';
+}
+.details > h4{
+    font-family: 'brs';
+    font-size: 20px;
+}
+.pages > h4{
+    font-family: 'brs';
+    font-size: 20px;
+}
+
 .h1bttn {
     border: none;
     background-color: #9D9169;
@@ -89,6 +159,24 @@ body{
     display:flex;
     width: max-content;
     justify-content: space-between;
+}
+.dashboard > #end-div > p > a,
+.dashboard > #end-div > p >a:visited,
+.dashboard > #end-div > p > a:active ,
+.dashboard > #end-div > p > a:hover ,
+.dashboard > #end-div > p > a:focus{
+    color: #452B1E;
+    text-decoration: none; 
+    all: unset;
+}
+.dashboard > a,
+.dashboard >a:visited,
+.dashboard > a:active ,
+.dashboard > a:hover ,
+.dashboard > a:focus{
+    color: #452B1E;
+    text-decoration: none; 
+    all: unset;
 }
 #end-div {
     display:flex;
