@@ -29,6 +29,7 @@ main {
     font-size: 35px;
     color: #7C4F23;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .product-description {
@@ -38,6 +39,7 @@ main {
     max-width: 600px;
     line-height: 1.5;
     margin-bottom: 40px;
+    text-align: left;
 }
 
 .product-buttons {
@@ -47,13 +49,8 @@ main {
     margin-bottom: 100px;
 }
 
-/* Reusing .h1bttn from mainlayout.css for the Buy Now button */
-.buy-now-btn {
-   
-}
 
 .add-to-cart-btn {
-    /* Style for the secondary/outline button (Add to Cart) */
     background-color: transparent;
     border: 2px solid #9D9169; 
     color: #9D9169;
