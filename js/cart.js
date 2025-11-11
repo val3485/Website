@@ -1,5 +1,4 @@
 const products =
-
 [{
     id: "1",
     name: "SAMPLE A",
@@ -121,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="remove-button" onclick="removeFromCart('${item.id}'); location.reload();">-</button>
             <p class = "item-total">Php. ${(matchingProduct.price * item.quantity).toFixed(2)}</p>
         </div>   
-
         `;
 
      console.log(`Item image: ${matchingProduct.image}`);
@@ -130,8 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
    
 
    
-
-
 
     if (cartItems.length > 0) {
         document.querySelector('#container').innerHTML = cartContainer;
