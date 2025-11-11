@@ -40,6 +40,7 @@ body{
     object-fit: fill;
     width: 100%;
     height: fit-content;
+    margin-top: 5vh;
 }
 .footer >  div {
     display: flex;
@@ -77,6 +78,9 @@ body{
     width: 200px;
     display: flex;
     flex-direction: column;
+}
+.logoFooter > img {
+    margin-left: 2vw;
 }
 .logoFooter > p {
     font-family: 'lpp';
