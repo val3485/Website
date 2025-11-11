@@ -3,19 +3,22 @@ const products =
 [{
     id: "1",
     name: "SAMPLE A",
-    price: "20.00"
+    price: "20.00",
+    image: "../pics/kape.svg"
 },
 
 {
     id: "2",
     name: "SAMPLE B",
-    price: "35.00"
+    price: "35.00",
+    image: "../pics/coffee.svg"
 }, 
 
 {
     id: "3",
     name: "SAMPLE C",
-    price: "50.00"
+    price: "50.00",
+    image: "../pics/non_caffein.svg"
 }
 ]
 
@@ -72,7 +75,13 @@ function removeFromCart(productID) {
 
     cartItems.forEach(item => {
         if (item.id === productID) {
-            item.quantity--;
+            if (item.quantity > 0) {
+                item.quantity--;
+            }
+
+            else{
+                item.quantity = 0;
+            }
         }
     });
 
@@ -115,9 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         `;
 
-    
+     console.log(`Item image: ${matchingProduct.image}`);
 
     });
+   
 
    
 

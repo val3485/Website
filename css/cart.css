@@ -24,10 +24,9 @@ body > div.cart > .cart-header > p#header1 {
     padding-left: 5%;
 }
 
-body > div.cart > .cart-header, .cart-item {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+body > div.cart > .cart-header {
+    display: grid;
+    grid-template-columns: 10fr 5fr 5fr 1fr 10fr;
     gap: 10vh;
 
 
@@ -35,9 +34,13 @@ body > div.cart > .cart-header, .cart-item {
 
 .cart-item {
     background-color: #E9D0A7;
+    display: grid;
+    grid-template-columns:10fr ;
+    grid-column: span 1 /span 2;
     padding: 2vh;
     padding-right: 10vh;
     border-color: black;
+
 }
 
 .item-name, .item-iamge {
