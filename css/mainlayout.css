@@ -79,6 +79,9 @@ body{
     display: flex;
     flex-direction: column;
 }
+.logoFooter > img {
+    margin-left: 2vw;
+}
 .logoFooter > p {
     font-family: 'lpp';
     font-size: 25px;
