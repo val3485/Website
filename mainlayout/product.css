@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #e3c49d;
+  color: #3b2a1a;
+}
+
+/* Header */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #e3c49d;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.navbar a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #3b2a1a;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Product Section */
+.product-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.product-section h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #3b2a1a;
+}
+
+.product-image {
+  width: 300px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.buttons button {
+  padding: 0.8rem 1.5rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.buy {
+  background-color: #3b2a1a;
+  color: #fff;
+}
+
+.cart {
+  background-color: #b08a58;
+  color: #fff;
+}
+
+.buttons button:hover {
+  opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+  background-color: #3b2a1a;
+  color: #e3c49d;
+  padding: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.footer-links h4 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
