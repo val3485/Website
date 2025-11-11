@@ -1,80 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <title>Cold Brew with Milk - Purr & pour</title>
-    <link rel="stylesheet" href="../css/mainlayout.css">
+<head>
+    <title>Cold Brew with Milk - Purr n Pour</title>
+    <link rel="stylesheet" href="./css/mainlayout.css">
     <link rel="stylesheet" href="./css/product.css">
-    <script  src="./mainlayout/footer.js" defer> </script>
-  </head>
-  <body>
-    <div class="one-product">
-      <header class="header">
-        <img class="group-12" src="img/group-12.png" alt="Purr and pour logo icon" />
-        <div class="purr-pour-wrapper">
-          <p class="purr-pour-2">
-            <span class="text-wrapper-34">Purr </span>
-            <span class="span">&amp; </span>
-            <span class="text-wrapper-34">pour</span>
-          </p>
-        </div>
-        <nav class="header-nav">
-          <a href="#shop" class="text-wrapper-35">Shop</a>
-          <a href="#about" class="text-wrapper-36">About us</a>
-        </nav>
-        <div class="frame-6" role="img" aria-label="Shopping cart icon">
-          <img class="vector-6" src="img/vector-6.svg" alt="" />
-          <img class="vector-7" src="img/vector-4.svg" alt="" />
-          <img class="vector-8" src="img/image.svg" alt="" />
-        </div>
-      </header>
-      <main class="product-content">
-        <section class="product-hero">
-          <div class="group-10">
-            <img class="c" src="file:///C:/Users/USER/Downloads/brew.svg" alt="Cold Brew with Milk product image" />
-            <div class="group-11" role="img" aria-label="Cold Brew with Milk curved text">
-              <span class="text-wrapper-14">C</span>
-              <span class="text-wrapper-15">o</span>
-              <span class="text-wrapper-16">l</span>
-              <span class="text-wrapper-17">d</span>
-              <span class="text-wrapper-18"></span>
-              <span class="text-wrapper-19">B</span>
-              <span class="text-wrapper-20">r</span>
-              <span class="text-wrapper-21">e</span>
-              <span class="text-wrapper-22">w</span>
-              <span class="text-wrapper-23"></span>
-              <span class="text-wrapper-24">w</span>
-              <span class="text-wrapper-25">i</span>
-              <span class="text-wrapper-26">t</span>
-              <span class="text-wrapper-27">h</span>
-              <span class="text-wrapper-28"></span>
-              <span class="text-wrapper-29">M</span>
-              <span class="text-wrapper-30">i</span>
-              <span class="text-wrapper-31">l</span>
-              <span class="text-wrapper-32">k</span>
-              <span class="text-wrapper-33"></span>
+    <script src="./js/footer.js" defer></script>
+</head>
+<body>
+    
+    <div class="dashboard">
+        <a href="/">
+            <div>
+                <img id="logo" src="./pics/logo.svg" alt="Purr n Pour Logo">
+                <p id="name">Purr n Pour</p>
             </div>
-          </div>
-        </section>
-        <section class="product-details">
-          <p class="text-wrapper-13">(₱165.00)</p>
-          <p class="steeped-slowly-and">
-            Steeped slowly and blended softly with milk. Purr &amp; Pour's Cold Brew with Milk embodies patience with
-            grace. Its smooth, deep flavor invites you to unwind and savor the unhurried.
-          </p>
-          <div class="product-actions">
-            <button class="frame-5" type="button" aria-label="Buy Now">
-              <span class="rectangle"></span>
-              <span class="add-to-cart">Buy Now</span>
-            </button>
-            <button class="frame-4" type="button" aria-label="Add to Cart">
-              <span class="rectangle"></span>
-              <span class="text-wrapper-12">Add to Cart</span>
-            </button>
-          </div>
-        </section>
-      </main>
-      
-  </body>
+        </a>
+        
+        <div id="end-div">
+            <p><a href="#">Shop</a></p>
+            <p><a href="#">About us</a></p>
+            <a href="#">
+                <img id="cart" src="./pics/cart.svg" alt="Shopping Cart">
+            </a>
+        </div>
+    </div>
+
+    <main class="product-container">
+        <div class="product-card">
+            <div class="product-image-area">
+                <img src="./pics/arched.svg" alt="Cold Brew with Milk Coffee" />
+            </div>
+
+            <div class="product-details">
+                <p class="product-price"><strong>(₱165.00)</strong></p>
+                <p class="product-description">
+                    Steeped slowly and blended softly with milk. Purr & Pour's Cold Brew with Milk embodies patience with grace. Its smooth, deep flavor invites you to unwind and savor the unhurried.
+                </p>
+                <div class="product-buttons">
+                    <button class="h1bttn buy-now-btn">Buy Now</button>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <add-footer></add-footer>
+    
+</body>
 </html>
