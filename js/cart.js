@@ -65,8 +65,6 @@ function addToCart(productID) {
     }
     
     saveStorage();
-    console.log(matchingItem);
-    // console.log(cartItems);
 }
 //remove item from cart
 function removeFromCart(productID) {
@@ -82,10 +80,13 @@ function removeFromCart(productID) {
                 item.quantity = 0;
             }
         }
-    });
-
+    });  
+    
     saveStorage();
 }
+
+  
+
 
 
 function addFromCart(productID) {
@@ -97,6 +98,11 @@ function addFromCart(productID) {
     });
 
     saveStorage();
+
+}
+function removeItem(productID) {
+  cartItems = cartItems.filter(item => item.id !== productID);
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
 
@@ -109,25 +115,36 @@ document.addEventListener('DOMContentLoaded', () => {
         const matchingProduct = products.find(product => product.id === item.id);
         const itemTotal = matchingProduct.price * item.quantity;
         total += itemTotal;
+        
+        
+        if (item.quantity <=0){
+            removeItem(item.id);
+        }
+
 
         cartContainer +=
         `<div class = "cart-item">
-            <img class = "item-image" src = "${matchingProduct.image}">
-            <p class = "item-name">${matchingProduct.name}</p>
+            <div class = "merge">
+                <img class = "item-image" src = "${matchingProduct.image}">
+                <p class = "item-name">${matchingProduct.name}</p>
+            </div>
+
             <p class = "item-price">${matchingProduct.price}</p>
-            <button class="add-button" onclick="addFromCart('${item.id}'); location.reload();">+</button>
-            <p class = "item-quantity">${item.quantity}</p>
-            <button class="remove-button" onclick="removeFromCart('${item.id}'); location.reload();">-</button>
-            <p class = "item-total">Php. ${(matchingProduct.price * item.quantity).toFixed(2)}</p>
+            <div class = "quantity-controls">
+                <button class="button" onclick="addFromCart('${item.id}'); location.reload();">+</button>
+                <p class = "item-quantity">${item.quantity}</p>
+                <button class="button" onclick="removeFromCart('${item.id}'); location.reload();">-</button>
+            </div>
+            <p class = "item-total">Php.  ${(matchingProduct.price * item.quantity).toFixed(2)}</p>
         </div>   
         `;
-
-     console.log(`Item image: ${matchingProduct.image}`);
+       
 
     });
-   
 
-   
+
+        
+
 
     if (cartItems.length > 0) {
         document.querySelector('#container').innerHTML = cartContainer;
@@ -135,7 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#container').innerHTML = '<p>Your cart is empty.</p>';
     }
 
-    document.querySelector('.total').innerText = `Total: $${total.toFixed(2)}`;
+    document.querySelector('.total').innerText = `YOUR TOTAL AMOUNT IS: Php. ${total.toFixed(2)}`;
 
 
 });
+
+
+
+
+
