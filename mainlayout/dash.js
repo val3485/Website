@@ -7,17 +7,20 @@ function addDashboard(){
         <div id="dash">
 
             <div class="dashboard"">
-                <div>
-                    <img id="logo" src="../pics/logo.svg">
-                    <p id="name">
-                        Purr n Pour
-                    </p>
-                </div>
-
+                <a href="./homepage.html" id="home"> 
+                    <div >
+                    
+                            <img id="logo" src="../pics/logo.svg">
+                            <p id="name">
+                                Purr n Pour
+                            </p>
+                
+                    </div>
+                </a>
                 <div id="end-div">
                     <p onclick="sidebar();sidebar2()">shop</p>
                    
-                    <p>About us</p>
+                    <p><a href="./aboutUs.html" id="abt_us">About us</a></p>
                     <img id="cart"  style="margin-bottom: 20px; width:40px;height:40px;" src="../pics/cart.svg">
                 </div>
                     
@@ -53,8 +56,17 @@ function addDashboard(){
     document.body.appendChild(dash);
 }
 
+
+
 document.addEventListener("DOMContentLoaded", function (e) {
     addDashboard();
+});
+
+document.getElementById('abt_us').addEventListener('click', function(e) {
+  e.preventDefault(); 
+});
+document.getElementById('home').addEventListener('click', function(e) {
+  e.preventDefault(); 
 });
 
 function sidebar (){
