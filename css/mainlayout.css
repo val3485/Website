@@ -40,6 +40,7 @@ body{
     object-fit: fill;
     width: 100%;
     height: fit-content;
+    margin-top: 5vh;
 }
 .footer >  div {
     display: flex;
