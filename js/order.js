@@ -6,8 +6,8 @@ let orders =[
     item_qty: 2,
     total: "2000.00",
     items: [
-      { product: "Coffee Beans", price: 250, item_qty: 2 },
-      { product: "Mug", price: 150, item_qty: 1 }
+      { product: "Coffee Beans", price: 250, qty: 2 },
+      { product: "Mug", price: 150, qty: 1 }
     ]
   },
   {
@@ -17,8 +17,8 @@ let orders =[
     item_qty: 2,
     total: "1200.00",
     items: [
-      { product: "Cookie", price: 100, item_qty: 3 },
-      { product: "Latte", price: 300, item_qty: 1 }
+      { product: "Cookie", price: 100, qty: 3 },
+      { product: "Latte", price: 300, qty: 1 }
     ]
   }
 ]
@@ -67,26 +67,28 @@ let orders =[
         const cart = document.getElementById("cart-content");
         
         cart.innerHTML = ""; 
+        orders.forEach(order => {
+            let products = "";
 
-        orders.items.forEach(prod => {
-        products += `
-            <div>
+            order.items.forEach(prod => {
+            products += `
                 <div>
-                    <p>Coca Cola</p>
+                    <div>
+                        <p>${prod.product}</p>
+                    </div>
+                    <div>
+                        <p>${prod.price}</p>
+                    </div>
+                    <div>
+                        <p>${prod.qty}</p>
+                    </div>
                 </div>
-                <div>
-                    <p>P 895</p>
-                </div>
-                <div>
-                    <p>9</p>
-                </div>
-            </div>
-        `;
-        });
+            `;
+            });
 
-        orders.forEach(item => {
-            cart.innerHTML += `
-               <div class="acc-content">
+            // orders.forEach(item => {
+                cart.innerHTML += `
+                <div class="acc-content">
                         <div>
                             <div>
                                 <div>
@@ -105,10 +107,15 @@ let orders =[
                             </div>
 
                             ${products}
+                            
                         </div>
                     </div>
-            `;
-        });
+                `;
+                console.log("EIDDG")
+            // });
+        })
+
+        console.log("shihdf")
     }
 
     table()
