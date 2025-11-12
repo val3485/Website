@@ -18,7 +18,7 @@ function addDashboard(){
                 <div id="end-div">
                     <p onclick="sidebar()">shop</p>
                    
-                    <p><a href="./aboutUs.html" id="abt_us">About us</a></p>
+                    <p><a href="./aboutUs.html" id="unset">About us</a></p>
                     <a href="./cart.html">
                         <img id="cart"  style="margin-bottom: 20px; width:40px;height:40px;" src="../pics/cart.svg">
                     </a>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> Orders</title>
+    <link rel="stylesheet" href="../css/mainlayout.css">
+    <link rel="stylesheet" href="../css/adminDash.css">
+    <link rel="stylesheet" href="../css/orders.css">
+    <script src="./mainlayout/dashAdmin.js" defer> </script>
+</head>
+
+<body>
+    <div id="main-con" >
+        <add-dash></add-dash>
+        <div id="content">
+
+            <div class="order" id="order_list">
+                <div>
+                    <h1>Order List</h1>
+                    <div class="table-head">
+                        <div>
+                            <h2>Order Number</h2>
+                        </div>
+                        <div>
+
+                            <h2>Costumer Name</h2>
+                        </div>
+                        <div>
+
+                            <h2>Item Qty</h2>
+                        </div>
+                        <div>
+
+                            <h2>Total Paid</h2>
+                        </div>
+                    </div>
+
+                    <div class="table-data" id="data" ></div>
+                        <!-- <div class="show">
+
+                            <p>#7869</p>
+                        </div>
+                        <div class="show">
+
+                            <p>Clare C. Lubiano</p>
+                        </div>
+                        <div class="show">
+
+                            <p>5</p>
+                        </div>
+                        <div class="show">
+
+                            <p>8900</p>
+                        </div> -->
+
+                        <div id="acc-content">
+                            <div>
+                                <div>
+                                    <div>
+                                        
+                                        <h2>Product Name</h2>
+                                    </div>
+                                    <div>
+                                        
+                                        <h2>Price</h2>
+                                    </div>
+                                    <div>
+                                        
+                                        <h2>Quantity</h2>
+                                    </div>
+                                    
+                                </div>
+
+                                <div>
+                                    <div>
+
+                                        <p>Coca Cola</p>
+                                    </div>
+                                    <div>
+                                        <p>P 895</p>
+                                    </div>
+                                    <div>
+                                        <p>9</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-data" id="data1" onclick="expand(this)">
+                        <div class="show">
+
+                            <p>#7869</p>
+                        </div>
+                        <div class="show">
+
+                            <p>Clare C. Lubiano</p>
+                        </div>
+                        <div class="show">
+
+                            <p>5</p>
+                        </div>
+                        <div class="show">
+
+                            <p>8900</p>
+                        </div>
+
+                        <div id="acc-content">
+                             <h1>Details</h1> 
+                            <div>
+                                <div>
+                                    <div>
+                                        
+                                        <h2>Product Name</h2>
+                                    </div>
+                                    <div>
+                                        
+                                        <h2>Price</h2>
+                                    </div>
+                                    <div>
+                                        
+                                        <h2>Quantity</h2>
+                                    </div>
+                                    
+                                </div>
+
+                                <div>
+                                    <div>
+
+                                        <p>Coca Cola</p>
+                                    </div>
+                                    <div>
+                                        <p>P 895</p>
+                                    </div>
+                                    <div>
+                                        <p>9</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> 
+
+            <script defer src="js/order.js"> </script>
+            <div class="order" >
+                <div>
+                    <h1>Tracker List</h1>
+                    <div class="table-head">
+                        <div>
+                            <h2>Order Number</h2>
+                        </div>
+                        <div>
+
+                            <h2>Costumer Name</h2>
+                        </div>
+                        <div>
+
+                            <h2>Status</h2>
+                        </div>
+                        <div>
+
+                            <h2>Total Paid</h2>
+                        </div>
+                    </div>
+                    <div class="table-data" id="data" onclick="expand(this)">
+                        <div class="show">
+
+                            <p>#7869</p>
+                        </div>
+                        <div class="show">
+
+                            <p>Clare C. Lubiano</p>
+                        </div>
+                        <div class="show">
+
+                            <p>5</p>
+                        </div>
+                        <div class="show">
+
+                            <p>8900</p>
+                        </div>
+
+                        <div id="acc-content">
+                            <!-- <h1>Details</h1> -->
+                            <div>
+                                <div>
+                                    <div>
+                                        
+                                        <h2>Product Name</h2>
+                                    </div>
+                                    <div>
+                                        
+                                        <h2>Price</h2>
+                                    </div>
+                                    <div>
+                                        
+                                        <h2>Quantity</h2>
+                                    </div>
+                                    
+                                </div>
+
+                                <div>
+                                    <div>
+
+                                        <p>Coca Cola</p>
+                                    </div>
+                                    <div>
+                                        <p>P 895</p>
+                                    </div>
+                                    <div>
+                                        <p>9</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-data" id="data2" onclick="expand(this)">
+                        <div class="show">
+
+                            <p>#7869</p>
+                        </div>
+                        <div class="show">
+
+                            <p>Clare C. Lubiano</p>
+                        </div>
+                        <div class="show">
+
+                            <p>5</p>
+                        </div>
+                        <div class="show">
+
+                            <p>8900</p>
+                        </div>
+
+                        <div id="acc-content">
+                            <!-- <h1>Details</h1> -->
+                            <div>
+                                <div>
+                                    <div>
+                                        
+                                        <h2>Product Name</h2>
+                                    </div>
+                                    <div>
+                                        
+                                        <h2>Price</h2>
+                                    </div>
+                                    <div>
+                                        
+                                        <h2>Quantity</h2>
+                                    </div>
+                                    
+                                </div>
+
+                                <div>
+                                    <div>
+
+                                        <p>Coca Cola</p>
+                                    </div>
+                                    <div>
+                                        <p>P 895</p>
+                                    </div>
+                                    <div>
+                                        <p>9</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+    
+<script>
+    // let toggle = false
+    const acc = document.querySelectorAll(".table-data");
+    const show = document.getElementById("acc-content")
+    // let toggle = true
+    
+    function expand(e) {
+        const content = e.querySelector('.acc-content');
+
+        acc.forEach(item => {
+
+            if (item !== e) {
+                item.classList.remove("expand")
+                show.style.display ="flex"
+
+            };
+        });
+
+       
+  e.classList.toggle('expand');
+    }
+</script>
+
+</html>

@@ -27,6 +27,16 @@ body{
     margin: 0;
     background-color: #E9D0A7;
 }
+#main-con{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow-y: hidden;
+}
+#content{
+        width: 160vh;
+    background-color: #452B1E;
+}
 .footer{
     margin-top: 200px;
     height: 30px;
@@ -164,11 +174,11 @@ body{
     width: max-content;
     justify-content: space-between;
 }
-.dashboard > #end-div > p > a,
-.dashboard > #end-div > p >a:visited,
-.dashboard > #end-div > p > a:active ,
-.dashboard > #end-div > p > a:hover ,
-.dashboard > #end-div > p > a:focus{
+#unset,
+#unset:visited,
+#unset:active ,
+#unset:hover ,
+#unset:focus{
     color: #452B1E;
     text-decoration: none; 
     all: unset;
@@ -190,6 +200,13 @@ body{
 }
 #end-div p{
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+#end-div p:hover{
+    font-family: 'brsBold';
+    font-size: 25px;
+}
+#end-div a > img:hover{
+    scale: 110%;
 }
 #end-div p:hover{
     font-family: 'brsBold';

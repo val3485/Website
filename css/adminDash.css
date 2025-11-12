@@ -1,9 +1,4 @@
-#main-con{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    overflow-y: hidden;
-}
+
 .dashAdmin{
     width: 50vh;
 }
@@ -43,8 +38,6 @@
 }
 .dashMain{
     padding: 20px;
-    width: 160vh;
-    background-color: #452B1E;
 }
 .dashMain > h1{
     color: aliceblue;

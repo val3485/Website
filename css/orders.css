@@ -1,0 +1,109 @@
+#content{
+    width: 100%;
+}
+.order{
+    padding: 5vh;
+}
+.order > div{
+    gap: 10px;
+}
+.order > div > h1{
+    text-align: left;
+    font-family: 'brs';
+    color: white;
+    font-size: 24px;
+}
+.table-head, .table-data{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3px;
+    padding: 5px;
+}
+.table-head{
+    background-color: rgba(240, 248, 255, 0.073);
+}
+.table-head > div {
+    color: white;
+    height: 20px;
+    text-align: center;
+    margin-top: -20px;   
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    padding: 20px;
+}   
+.table-head > div > h2 {
+    font-family: 'brs';
+    font-size: 16px;
+    font-weight: 200;
+}
+.table-data {
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 2px;
+    height: 30px;
+    position: relative;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.table-data:hover{
+    background-color: rgb(255, 248, 239);
+
+}
+.table-data.expand {
+    min-height: 120px;
+    max-height: 300px;
+    overflow: hidden;
+}
+/* .show{ */
+    /* border: #da3333 solid 1px; */
+    /* text-align: center;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.table-data > div.expand {
+    border: 5px solid #da3333;
+}
+
+.table-data > div > p {
+    font-family: 'afc';
+}
+
+#acc-content {
+    display:none;
+    padding-left: 10px;
+    position: absolute;
+    justify-content: space-between;
+    z-index: 1;
+    bottom: 0;
+    font-family: 'brs';
+    width: 98%;
+}
+#acc-content >  div {
+    border-top: 1px solid #00000059;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    /* border: solid 3px #962727; */
+}
+#acc-content >  div > div{
+    display: flex;
+    justify-content: space-around;
+}
+#acc-content >  div > div > div {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+#acc-content >  div >div>div> h2{
+    font-size: 16px;
+    margin-top: 1px;
+}
+#acc-content >  div > div>div>p{
+    font-size: 16px;
+    margin-top: -24px;
+}
+#acc-content.show {
+    display:flex
+}
