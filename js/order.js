@@ -37,35 +37,35 @@ const orders =[
 
 
 
-    function table(){
+    // function table(){
 
-        const data = document.getElementById("data");
+    //     const data = document.getElementById("data");
         
-        data.innerHTML = ""; 
+    //     data.innerHTML = ""; 
         
-        orders.forEach(item => {
-            data.innerHTML += `
-               <div class="heuy2" onclick="expand(this)">
-                    <div class="show">
-                        <p>#${item.id} huh</p>
-                    </div>
+    //     orders.forEach(item => {
+    //         data.innerHTML += `
+    //            <div class="heuy2" onclick="expand(this)">
+    //                 <div class="show">
+    //                     <p>#${item.id} huh</p>
+    //                 </div>
 
-                    <div class="show">
+    //                 <div class="show">
         
-                        <p>${item.id}</p>
-                    </div>
-                    <div class="show">
+    //                     <p>${item.id}</p>
+    //                 </div>
+    //                 <div class="show">
         
-                        <p>5</p>
-                    </div>
-                    <div class="show">
+    //                     <p>5</p>
+    //                 </div>
+    //                 <div class="show">
         
-                        <p>8900</p>
-                    </div>
-            </div>
-            `;
-        });
-           data.innerHTML = html;
-    }
+    //                     <p>8900</p>
+    //                 </div>
+    //         </div>
+    //         `;
+    //     });
+    //        data.innerHTML = html;
+    // }
 
     console.log(table)
