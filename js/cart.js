@@ -2,24 +2,29 @@ const products =
 [{
     id: "1",
     name: "SAMPLE A",
-    price: "20.00"
+    price: "20.00",
+    image: "../pics/kape.svg",
+    quantity: "10"
 },
 
 {
     id: "2",
     name: "SAMPLE B",
-    price: "35.00"
+    price: "35.00",
+    image: "../pics/coffee.svg"
 }, 
 
 {
     id: "3",
     name: "SAMPLE C",
-    price: "50.00"
+    price: "50.00",
+    image: "../pics/non_caffein.svg"
 }
 ]
 
 let cartItems = [];
 
+//cart items
 function getStorage(){
     cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 }
@@ -27,6 +32,18 @@ function getStorage(){
 function saveStorage(){
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
+
+let allSales = [];
+//checkout items
+function placedItems(){
+    allSales = JSON.parse(localStorage.getItem('allSales')) || [];
+}
+
+function saveItems() {
+    localStorage.setItem('allSales', JSON.stringify(allSales));
+}
+
+//cut
 
 const buttons = document.querySelectorAll('.js-add-to-cart');
 
@@ -62,8 +79,6 @@ function addToCart(productID) {
     }
     
     saveStorage();
-    console.log(matchingItem);
-    // console.log(cartItems);
 }
 //remove item from cart
 function removeFromCart(productID) {
@@ -71,12 +86,28 @@ function removeFromCart(productID) {
 
     cartItems.forEach(item => {
         if (item.id === productID) {
-            item.quantity--;
-        }
-    });
+            if (item.quantity > 0) {
+                item.quantity--;
+            }
 
+            else{
+                item.quantity = 0;
+            }
+        }
+    });  
+    
     saveStorage();
 }
+
+// const chckoutBtn = document.getElementById('checkout-button');
+
+// function CheckoutBttn () {
+//     if(cartItems.length > 0) {
+//         chckoutBtn.style.display = "inline-block";
+//     }
+
+//     else
+
 
 
 function addFromCart(productID) {
@@ -88,10 +119,15 @@ function addFromCart(productID) {
     });
 
     saveStorage();
+
+}
+function removeItem(productID) {
+  cartItems = cartItems.filter(item => item.id !== productID);
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
+//document.addEventListener('DOMContentLoaded', () => {
     getStorage();
     let cartContainer = ' ';
     let total = 0;
@@ -103,29 +139,127 @@ document.addEventListener('DOMContentLoaded', () => {
 
         cartContainer +=
         `<div class = "cart-item">
-            <img class = "item-image" src = "${matchingProduct.image}">
-            <p class = "item-name">${matchingProduct.name}</p>
+            <div class = "merge">
+                <img class = "item-image" src = "${matchingProduct.image}">
+                <p class = "item-name">${matchingProduct.name}</p>
+            </div>
+
             <p class = "item-price">${matchingProduct.price}</p>
-            <button class="add-button" onclick="addFromCart('${item.id}'); location.reload();">+</button>
-            <p class = "item-quantity">${item.quantity}</p>
-            <button class="remove-button" onclick="removeFromCart('${item.id}'); location.reload();">-</button>
-            <p class = "item-total">Php. ${(matchingProduct.price * item.quantity).toFixed(2)}</p>
+            <div class = "quantity-controls">
+                <button class="add-button" onclick="addFromCart('${item.id}'); location.reload();">+</button>
+                <p class = "item-quantity">${item.quantity}</p>
+                <button class="remove-button" onclick="removeFromCart('${item.id}'); location.reload();">-</button>
+            </div>
+            <p class = "item-total">Php.  ${(matchingProduct.price * item.quantity).toFixed(2)}</p>
         </div>   
         `;
-
-    
+        
+        if (item.quantity <=0){
+            removeItem(item.id);
+        }
+       
 
     });
 
-   
+
+        
+
 
     if (cartItems.length > 0) {
         document.querySelector('#container').innerHTML = cartContainer;
     } else {
-        document.querySelector('#container').innerHTML = '<p>Your cart is empty.</p>';
+        document.querySelector('#container').innerHTML = '<p class = "empty">Your cart is empty. :<<</p>';
     }
 
-    document.querySelector('.total').innerText = `Total: $${total.toFixed(2)}`;
+    document.querySelector('.total').innerText = `YOUR TOTAL AMOUNT IS: Php. ${total.toFixed(2)}`;
 
 
+//});
+
+
+
+
+function checkout(){
+    getStorage();
+
+    if (cartItems.length === 0) {
+        alert("Cart is empty! Can't checkout :<")
+        return;
+    }
+
+    else{
+        //checkout
+        const chck = document.getElementById('checkout-details');
+        const btn = document.getElementById('checkout-bttn');
+        const closeBtn = document.getElementById('close');
+        const form = document.getElementById('checkoutForm');
+
+        //display form
+        btn.addEventListener("click", () => {
+            chck.style.display = "block";
+        });
+
+
+        //close button bruh
+        closeBtn.addEventListener("click", () =>{
+            chck.style.display = "none";
+        });
+
+        window.addEventListener("click", (e) => {
+            if(e.target == chck) {
+                chck.style.display = "none";
+            }
+        });
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const num = document.getElementById("num").value;
+            const address = document.getElementById("address").value;
+
+            if(name && num && address){
+                alert("Form submitted! Proceeding to checkout...");
+                window.location.href = "./checkout.html"; // go to checkout page
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btton = document.getElementById('checkout-bttn');
+    btton.addEventListener("click", checkout);   
 });
+
+
+
+// function placeOrder(){
+//     getStorage();
+
+//     placedItems();
+
+//     const newOrder = {
+//         orderID: Date.now(),
+//         items: cartItems,
+//         date: new Date().toISOString()
+//     };
+
+//     allSales.push(newOrder);
+
+//     saveItems();
+//     console.log(newOrder);
+//     localStorage.setItem('cartItems', JSON.stringify([]));
+
+//     alert(`Order Placed Successfully! Order ID: ${newOrder.orderID}`);
+// }
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const placed = document.getElementById('proceed-bttn');
+//     placed.addEventListener("click", placeOrder());
+// });
+
+// console.log(placedItems());
+// console.log(placeOrder());
