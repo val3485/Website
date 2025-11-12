@@ -6,6 +6,7 @@
 }
 .order > div{
     gap: 10px;
+    position: relative;
 }
 .order > div > h1{
     text-align: left;
@@ -84,7 +85,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    /* border: solid 3px #962727; */
+    border: solid 3px #962727;
 }
 .acc-content >  div > div{
     display: flex;
