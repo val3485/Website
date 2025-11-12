@@ -9,6 +9,7 @@ main {
     height: 60vh; 
     position: relative;
     overflow: hidden; /* Ensures the image doesn't overflow */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -28,43 +29,36 @@ main {
     box-sizing: border-box;
 }
 
-.category-title {
-    font-family: 'brsBold', sans-serif; 
-    font-size: 45px;
-    color: #452B1E; 
-    margin: 0;
-    margin-bottom: 30px;
-    text-align: left; 
-}
-
-.category-header {
-    position: relative;
-    display: inline-block;
-    margin-left: 20px; 
-}
-
-
 .category{
     font-family: 'brsBold', sans-serif; 
-    font-size: 45px;
+    font-size: 32px;
     color: #452B1E; 
+
+    background-color: transparent; /*removed borders and white bg ehe*/
+    text-align: left; 
+    display: inline-block;
+    border: none;
+    margin-left: 20px; 
     margin: 0;
     margin-bottom: 30px;
-    text-align: left; 
     appearance: none; /* Remove default system appearance*/
-    background-color: transparent; /*removed borders and white bg ehe*/
-    border: none;
 }
+
 
 .product-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr; /*3 columns*/
     gap: 30px;
     justify-items: center; /* Center within their grid cells */
     align-items: stretch;
 }
 
-.product-item {
+.link{
+    text-decoration: none;
+    color: inherit;
+}
+
+.prod {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,18 +69,23 @@ main {
     min-height: 400px;
 }
 
-.product-item-image {
-    fill: none;
-    background: transparent;
+.prod:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transform: translateY(-2px); /* Lift the card slightly */
+    transition: all 0.2s ease-in-out;
+}
+
+.prod-image {
     max-width: 250px;
     max-height: 300px;
     height: auto;
-    object-fit: contain;
+    object-fit: contain; 
     margin-top: 15px;
 }
 
-.product-item-name {
+.prod-name {
     font-family: 'brs', sans-serif;
+    font-weight: bold;
     font-size: 24px;
     color: #452B1E;
     margin: 0;
