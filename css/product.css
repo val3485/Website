@@ -1,0 +1,120 @@
+
+main {
+    padding-top: 10vh; /* Adjust the height or scale of the screen vertically*/
+    display: flex;
+    justify-content: center;
+    min-height: 100vh; /* takes up enough space before the footer */
+}
+
+.product {
+    width: 80vw; /*width for text*/
+    margin: 5vh auto 0;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image-area img {
+    width: 500px; 
+    height: 500px;
+    margin-bottom: 5px;
+}
+
+#p-name {
+    display: inline; /*to center name*/
+    font-family: 'afc', sans-serif; 
+    font-weight: bold;
+    color: #7C4F23; 
+    font-size: 64px;
+    text-align: left;
+    margin-bottom: 10px; /* Adjust spacing above the price */
+}
+
+.price {
+    display: flex;
+    font-family: 'afc', sans-serif; 
+    font-size: 32px;
+    font-weight: bold; 
+    color: #7C4F23;
+    margin-bottom: 20px;
+    
+}
+
+.description {
+    font-family: 'brs', sans-serif; 
+    font-size: 24px;
+    color: #452B1E;
+    max-width: 600px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.buttons {
+    display: flex;
+    gap: 30px; /* Space between buttons */
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+
+.add-to-cart-btn {
+    background-color: transparent;
+    border: 2px solid #9D9169; 
+    color: #9D9169;
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-family: 'afc', sans-serif;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.add-to-cart-btn:hover {
+    background-color: #9D9169;
+    color: aliceblue;
+}
+
+.add-cart-popup {
+    display: none; /* Hides the modal by default */
+    position: fixed; /* Stays in place when scrolling */
+    z-index: 1000; /* Ensures it sits above everything else */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark semi-transparent background */
+    
+    /* Centering the content box */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the inner content box */
+.add-cart {
+    background-color: #E9D0A7; /* Use your site's background color */
+    padding: 30px 50px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-text {
+    font-family: 'afc', sans-serif;
+    font-size: 24px;
+    color: #452B1E;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    /* Style this to look like your other buttons */
+    background-color: #9D9169;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'brs', sans-serif;
+}

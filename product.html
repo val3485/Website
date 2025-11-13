@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">     /*this is to set the symbols such as currency */
+    <title>Cold Brew with Milk - Purr n Pour</title>
+    <link rel="stylesheet" href="./css/mainlayout.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <script  src="./mainlayout/footer.js" defer> </script>
+    <script defer src="./mainlayout/dash.js"> </script>
+    <script  src="./js/chaproducts.js" defer> </script>
+    <script  src="./js/oneproduct.js" defer> </script>
+</head>
+<body>
+    
+ 
+
+    <main class="product-container">
+        <div class="product">
+            <div class="image-area" id="image-area">
+                </div>
+            <div id="product-info">
+                <h1 id="p-name"></h1>
+                <p class="price" id="price"></p>
+                <p class="description" id="description"></p> 
+
+                <div class="buttons" id="buttons">
+                    <button class="h1bttn buy-now-btn">Buy Now</button>
+                    <button onclick="AddToCart()" class="add-to-cart-btn">Add to Cart</button>
+                </div>
+
+                <div id="cart-popup" class="add-cart-popup">
+                <div class="add-cart">
+                    <span class="popup-text">Added In Your Cart!</span>
+                    <button onclick="closeCartPopup()" class="close-btn">OK</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <add-footer></add-footer>
+    
+</body>
+</html>
