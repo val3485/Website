@@ -6,6 +6,9 @@
         <link rel = "stylesheet" href = "../css/mainlayout.css">
         <link rel = "stylesheet" href = "../css/cart.css">
         <script defer src="./mainlayout/dash.js"> </script>
+        <script  src="./mainlayout/footer.js" defer> </script>
+
+
         
     </head>
 
@@ -17,16 +20,54 @@
                 <p id = "header">Quantity</p>
                 <p id = "header">Total</p>
             </div>
+            <div class = "cart-details">
+                <div id = "container"></div>   
 
-            <div id = "container"></div>   
+                <div class = "class">
+                    <p class = "total">
+                        
+                        <span id="total-amount">/span>
+                    </p>
+                     
+                    <div>
+                        <button id = "checkout-bttn">CHECKOUT?</button>
+                    </div>
+                </div>
+            </div>
 
-            <p class = "total">
-                <span id="total-amount"></span>
-            </p>
+           
+        </div>
+
+        <div id = "checkout-details" class = checkout>
+
+            <div class = "checkout-content">
+                <span id = "close">&times;</span>
+
+                <h2>ENTER YOUR DETAILS</h2>
+
+                <form id = "checkoutForm">
+                    <label for = "name">Name: </label><br>
+                    <input type = "text" id = "name" placeholder="Enter your complete name" required autocomplete="off"><br><br>
+
+                    <label for = "num">Contact Number: </label><br>
+                    <input type = "text" id = "num" placeholder = "09#########" required autocomplete="off"><br><br>
+
+                    <label for = "address">Delivery Address: </label><br>
+                    <input type = "text" id = "address" placeholder = "Enter delivery address" required autocomplete="off"><br><br>
+
+                    <label for = "msg">Message to Seller: </label><br><br>
+                    <input type = "text" id = "msg" placeholder="Any message/request/concern?"><br><br>
+
+                    <button type = "submit" id = "submit">Submit n' Checkout</button>
+                </form>
+            </div>
+
+
         </div>
 
       
         
-    <script defer src="./js/cart.js"> </script>
+    <script defer src="js/cart.js"> </script>
+    <add-footer></add-footer>
     </body>
 </html>

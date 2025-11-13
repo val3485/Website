@@ -1,0 +1,111 @@
+body {
+    background-color: #452B1E; 
+    /* Use flexbox to center the form horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+    margin: 0;
+    padding: 20px;
+}
+
+.popup-box {
+    background-color: #E9D0A7;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 16px; /* High radius for the rounded look */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    padding: 0; /* Remove padding from the form wrapper */
+    overflow: hidden; /* Contains any absolute positioning */
+}
+
+.align {
+    text-align: center;
+    padding-top: 20px;
+    position: relative;
+}
+
+.main {
+    padding: 20px 30px 40px; 
+}
+
+.logo {
+    width: 75px; 
+    height: 75px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 90%; /*for circular logo */
+}
+
+.header {
+    font-family:'lpp' ;
+    font-size: 24px;
+    color: #452B1E;
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+label {
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #452B1E;
+    display: block; /* to ensure the layers(?) */
+    margin-top: 15px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ddd;
+    box-sizing: border-box;
+    border-radius: 25px; 
+    transition: border-color 0.2s;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    border-color: #007bff; /* when input */
+    outline: none;
+}
+
+.login-btn {
+    background-color: #9D9169; 
+    color: white;
+    padding: 12px 20px;
+    margin: 25px 0 15px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 25px; 
+    font-family: 'afc', sans-serif;
+    font-size: 18px;
+    transition: background-color 0.2s;
+    
+}
+
+.login-btn a{
+    text-decoration: none;
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #837958;
+}
+
+.forem {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 14px;
+}
+
+.forem label {
+    margin: 0;
+}
+
+.forem .pass a {
+    color: #452B1E;
+    text-decoration: none;
+}

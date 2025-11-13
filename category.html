@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <head>
+    <meta charset="UTF-8">
     <title>Our Coffees - Purr n Pour</title>
     <link rel="stylesheet" href="./css/mainlayout.css">
     <link rel="stylesheet" href="./css/category.css"> 
     <script defer src="./mainlayout/dash.js"> </script>
     <script  src="./mainlayout/footer.js" defer> </script>
+    <script  src="./js/chaproducts.js" defer> </script>
 </head>
 <body>
     
@@ -26,13 +28,16 @@
     </div> -->
 
     <main>
-        <section class="above-pic">
+        <div class="above-pic">
             <img src="./pics/coffeebeans.svg" class="above-pic-bg">
-        </section>
+        </div>
 
         <section class="product-category">
-                <div class="category-header">
-                    <select class="category">
+                    <div id="product-categ">
+                    </div>
+                    
+                    <select class="category" onchange="handleCategory(this.value)">
+                        <option value="ALL">ALL</option>
                         <option value="HOT-COFFEE">HOT-COFFEE</option>
                         <option value="COLD-COFFEE">COLD-COFFEE</option>
                         <option value="NON-CAFFEINATED">NON-CAFFEINATED</option>
@@ -40,20 +45,6 @@
                 </div>
 
             <div class="product-grid">
-                <div class="product-item">
-                    <img src="./pics/latte.svg" class="product-item-image">
-                    <p class="product-item-name">Latte</p>
-                </div>
-
-                <div class="product-item">
-                    <img src="./pics/flat white.svg" class="product-item-image">
-                    <p class="product-item-name">Flat White</p>
-                </div>
-
-                <div class="product-item">
-                    <img src="./pics/espresso.svg" class="product-item-image">
-                    <p class="product-item-name">Espresso</p>
-                </div>
             </div>
         </section>
     </main>

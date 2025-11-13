@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Coffees - Purr n Pour</title>
+    <link rel="stylesheet" href="./css/mainlayout.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script  src="./js/login.js" defer> </script>
+</head>
+    <body>
+        <form onsubmit="return handleClientLogin(event)" class="popup-box">
+        
+            <div class="align">
+                <img src="./pics/logo.svg" class="logo">
+            </div>    
+
+            <div class="main">
+                <h2 class="header">Welcome to Purr n Pour</h2>
+
+                <label for="user"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="user" id="user" required>
+
+                <label for="pass"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="pass" id="pass" required>
+
+                <button type="submit" class="login-btn">Log in</button>
+                
+                <div class="forem">
+                    <label>
+                        <input type="checkbox" checked="checked">Remember me
+                    </label>
+                </div>
+
+            </div>
+
+        </form>
+    
+    </body>
+</html>
