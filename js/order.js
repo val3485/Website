@@ -101,86 +101,88 @@ let orders =[
         
         orders.forEach(item => {
             data.innerHTML += `
-               <div class="table-data" onclick="expand(this)">
+               <div class="table-data" onclick="expand(this,${item.id})">
+                  <div class="data-header">
                     <div class="show">
                         <p>#${item.order_num}</p>
                     </div>
 
                     <div class="show">
-        
                         <p>${item.name}</p>
                     </div>
+
                     <div class="show">
-        
                         <p>${item.item_qty}</p>
                     </div>
+
                     <div class="show">
-        
                         <p>${item.total}</p>
                     </div>
+                  </div>
+
+                  <div id="acc-content"> </div>
             </div>
             `;
         });
     }
 
-    function costumer_cart(){
 
-        const cart = document.getElementById("cart-content");
-        
-        cart.innerHTML = ""; 
-        orders.forEach(order => {
-            let products = "";
+    
+function expand(e, id) {
 
-            order.items.forEach(prod => {
-            products += `
-                <div>
-                    <div>
-                        <p>${prod.product}</p>
-                    </div>
-                    <div>
-                        <p>${prod.price}</p>
-                    </div>
-                    <div>
-                        <p>${prod.qty}</p>
-                    </div>
-                </div>
-            `;
-            });
+    const acc = document.querySelectorAll(".table-data")
 
-            // orders.forEach(item => {
-                cart.innerHTML += `
-                <div class="acc-content">
-                        <div>
+    acc.forEach(item => {
+
+        if (item === e) {
+            e.classList.toggle("expand")
+            const cart = item.querySelector("#acc-content"); 
+
+            if (item.classList.contains("expand")) {
+                const order = orders.find(o => o.id === id) 
+                let products = ""
+                let products_data = ""
+
+                order.items.forEach(prod => { 
+                    products_data += `
+                        <div class="content">
                             <div>
-                                <div>
-                                    
-                                    <h2>Product Name</h2>
-                                </div>
-                                <div>
-                                    
-                                    <h2>Price</h2>
-                                </div>
-                                <div>
-                                    
-                                    <h2>Quantity</h2>
-                                </div>
-                                
+                                <p>${prod.product}</p>
                             </div>
+                            <div>
+                                <p>${prod.price}</p>
+                            </div>
+                            <div>
+                                <p>${prod.qty}</p>
+                            </div>
+                        </div > `
+                });
 
-                            ${products}
-                            
+                products += `
+                    <div class="acc-content"> 
+                        <div class="content-header">
+                            <div>
+                                <h2>Name</h2>
+                            </div>
+                            <div>
+
+                                <h2>Price</h2>
+                            </div>
+                            <div>
+                                <h2>Quantity</h2>
+                            </div>
                         </div>
+                        ${products_data}
                     </div>
                 `;
-                console.log("EIDDG")
-            // });
-        })
 
-        console.log("shihdf")
-    }
+                cart.innerHTML = products; 
+            }
+        } else {
+            item.classList.remove("expand") 
+        }
+    })
+}
 
-    // function 
 
-    table()
-    costumer_cart()
-    track()
+table()
