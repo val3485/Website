@@ -1,8 +1,30 @@
 let orders =[
 {
     id: 1,
-    order_num: 454,
-    name: "Clare",
+    order_num: 4543,
+    name: "Clare Lubiano",
+    item_qty: 2,
+    total: "2000.00",
+    items: [
+      { product: "Latte", price: 250, qty: 2 },
+      { product: "Vanilla Ice cream", price: 150, qty: 1 }
+    ]
+  },
+  {
+    id: 2,
+    order_num: 4529,
+    name: "Sylvia Heart Sulla",
+    item_qty: 2,
+    total: "1200.00",
+    items: [
+      { product: "Cookie", price: 100, qty: 3 },
+      { product: "Latte", price: 300, qty: 1 }
+    ]
+  },
+{
+    id: 3,
+    order_num: 8958,
+    name: "Chybes Shantee Naje",
     item_qty: 2,
     total: "2000.00",
     items: [
@@ -11,9 +33,53 @@ let orders =[
     ]
   },
   {
-    id: 2,
-    order_num: 454,
-    name: "Alex",
+    id: 4,
+    order_num: 3652,
+    name: "John Doe",
+    item_qty: 2,
+    total: "1200.00",
+    items: [
+      { product: "Cookie", price: 100, qty: 3 },
+      { product: "Latte", price: 300, qty: 1 }
+    ]
+  },
+{
+    id: 5,
+    order_num: 4521,
+    name: "Alexis Mayocalba",
+    item_qty: 2,
+    total: "2000.00",
+    items: [
+      { product: "Coffee Beans", price: 250, qty: 2 },
+      { product: "Mug", price: 150, qty: 1 }
+    ]
+  },
+  {
+    id: 6,
+    order_num: 2356,
+    name: "Donald Higgins",
+    item_qty: 2,
+    total: "1200.00",
+    items: [
+      { product: "Cookie", price: 100, qty: 3 },
+      { product: "Latte", price: 300, qty: 1 }
+    ]
+  },
+{
+    id: 7,
+    order_num: 1542,
+    name: "Edward Liao",
+    item_qty: 2,
+    total: "2000.00",
+    items: [
+      { product: "Coffee Beans", price: 250, qty: 2 },
+      { product: "Mug", price: 150, qty: 1 }
+    ]
+  },
+  {
+    id: 8,
+    order_num: 8923,
+    name: "Belle Tiu",
     item_qty: 2,
     total: "1200.00",
     items: [
@@ -23,14 +89,9 @@ let orders =[
   }
 ]
 
-
-
-
     localStorage.setItem('orders', JSON.stringify(orders));
-
     orders = JSON.parse(localStorage.getItem('orders')) || [];
-
-
+ 
 
     function table(){
 
@@ -118,5 +179,8 @@ let orders =[
         console.log("shihdf")
     }
 
+    // function 
+
     table()
     costumer_cart()
+    track()
