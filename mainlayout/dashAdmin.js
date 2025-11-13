@@ -32,6 +32,12 @@ class ComponentDash extends HTMLElement {
                     <img  src="../pics/receipt.svg">
                     <p>Receipt List</p>
                 </div>
+
+                <div class="sign-out">
+                        <div class="listAdmin">
+                            <a href="./login.html" id="sign-out">Sign-out</a>
+                        </div>
+                </div>
         </div>
         `;
     }

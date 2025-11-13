@@ -34,7 +34,7 @@ body{
     overflow-y: hidden;
 }
 #content{
-        width: 160vh;
+    width: 100%;
     background-color: #452B1E;
 }
 .footer{

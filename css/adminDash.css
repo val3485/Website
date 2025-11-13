@@ -2,7 +2,7 @@
 .dashAdmin{
     width: 250px; 
     height: 100vh; /* Must be 100% of the viewport height */
-    
+    /* position: absolute; */
     display: flex;
     flex-direction: column; /* Stack children vertically */
     
@@ -80,6 +80,7 @@
     font-size: 20px;
     color: red;
     display: flex;
+    margin-top:5vh;
     flex-direction: column;
     line-height: 0.5;
     flex-shrink: 0; /*so it doesn't try to grow*/
