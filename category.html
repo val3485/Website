@@ -3,11 +3,12 @@
     <title>Our Coffees - Purr n Pour</title>
     <link rel="stylesheet" href="./css/mainlayout.css">
     <link rel="stylesheet" href="./css/category.css"> 
+    <script defer src="./mainlayout/dash.js"> </script>
     <script  src="./mainlayout/footer.js" defer> </script>
 </head>
 <body>
     
-    <div class="dashboard">
+    <!-- <div class="dashboard">
         <a href="/">
             <div>
                 <img id="logo" src="./pics/logo.svg">
@@ -22,42 +23,44 @@
                 <img id="cart" src="./pics/cart.svg">
             </a>
         </div>
-    </div>
+    </div> -->
+    <div id="con">
 
-    <main>
-        <section class="above-pic">
-            <img src="./pics/coffeebeans.svg" class="above-pic-bg">
-        </section>
-
-        <section class="product-category">
-                <div class="category-header">
-                    <select class="category">
-                        <option value="HOT-COFFEE">HOT-COFFEE</option>
-                        <option value="COLD-COFFEE">COLD-COFFEE</option>
-                        <option value="NON-CAFFEINATED">NON-CAFFEINATED</option>
-                    </select>
-                </div>
-
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="./pics/latte.svg" class="product-item-image">
-                    <p class="product-item-name">Latte</p>
-                </div>
-
-                <div class="product-item">
-                    <img src="./pics/flat white.svg" class="product-item-image">
-                    <p class="product-item-name">Flat White</p>
-                </div>
-
-                <div class="product-item">
-                    <img src="./pics/espresso.svg" class="product-item-image">
-                    <p class="product-item-name">Espresso</p>
-                </div>
-            </div>
-        </section>
-    </main>
+        <main>
+            <section class="above-pic">
+                <img src="./pics/coffeebeans.svg" class="above-pic-bg">
+            </section>
     
-    <add-footer></add-footer>
+            <section class="product-category">
+                    <div class="category-header">
+                        <select class="category">
+                            <option value="HOT-COFFEE">HOT-COFFEE</option>
+                            <option value="COLD-COFFEE">COLD-COFFEE</option>
+                            <option value="NON-CAFFEINATED">NON-CAFFEINATED</option>
+                        </select>
+                    </div>
+    
+                <div class="product-grid">
+                    <div class="product-item">
+                        <img src="./pics/latte.svg" class="product-item-image">
+                        <p class="product-item-name">Latte</p>
+                    </div>
+    
+                    <div class="product-item">
+                        <img src="./pics/flat white.svg" class="product-item-image">
+                        <p class="product-item-name">Flat White</p>
+                    </div>
+    
+                    <div class="product-item">
+                        <img src="./pics/espresso.svg" class="product-item-image">
+                        <p class="product-item-name">Espresso</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <add-footer></add-footer>
+    </div>
     
 </body>
 </html>

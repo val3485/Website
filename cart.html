@@ -29,13 +29,40 @@
                         <span id="total-amount">/span>
                     </p>
                      
-                    <div class = "checkout">
-                        <button class = "checkout-bttn"> CHECKOUT?</button>
+                    <div>
+                        <button id = "checkout-bttn">CHECKOUT?</button>
                     </div>
                 </div>
             </div>
 
            
+        </div>
+
+        <div id = "checkout-details" class = checkout>
+
+            <div class = "checkout-content">
+                <span id = "close">&times;</span>
+
+                <h2>ENTER YOUR DETAILS</h2>
+
+                <form id = "checkoutForm">
+                    <label for = "name">Name: </label><br>
+                    <input type = "text" id = "name" placeholder="Enter your complete name" required autocomplete="off"><br><br>
+
+                    <label for = "num">Contact Number: </label><br>
+                    <input type = "text" id = "num" placeholder = "09#########" required autocomplete="off"><br><br>
+
+                    <label for = "address">Delivery Address: </label><br>
+                    <input type = "text" id = "address" placeholder = "Enter delivery address" required autocomplete="off"><br><br>
+
+                    <label for = "msg">Message to Seller: </label><br><br>
+                    <input type = "text" id = "msg" placeholder="Any message/request/concern?"><br><br>
+
+                    <button type = "submit" id = "submit">Submit n' Checkout</button>
+                </form>
+            </div>
+
+
         </div>
 
       
