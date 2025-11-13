@@ -1,3 +1,4 @@
+
 .chckout {
     background-color: #452B1E;
     width: 90%;
@@ -15,6 +16,7 @@ h1 {
 .Checkout-Det {
     display: grid;
     grid-template-columns: 20fr 15fr;
+    gap: 5vh;
 }
 
 .item-checkout {
@@ -24,6 +26,17 @@ h1 {
     gap: 50px;
 }
 
-.cart-header {
+.checkout-header {
+    all:unset;
+    display:grid;
+    grid-template-columns: 3fr 2fr 2fr 1fr;
+    gap: 3vh;
     
+}
+
+.checkout-header > p {
+    margin-right: 5vh;  
+}
+p#ch-header1 {
+    padding-right: 30vh;
 }
