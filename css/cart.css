@@ -56,12 +56,19 @@ body > div.cart > .cart-header {
     margin-right: 30%;
     margin-bottom: 3vh;
     padding-left: 3vh;
+    padding-bottom: 2vh;
     padding-right: 10vh;
     border-color: black;
     font-family: 'afc';
     font-size: 14px;
     align-items: center;
 
+}
+
+.add-button, .remove-button {
+    width: 20px;
+    height: 20px;
+    text-align: center;
 }
 
 .item-image {

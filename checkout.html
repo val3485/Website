@@ -3,8 +3,8 @@
     <head>
         <meta charset = "UTF-8">
         <title> CHECKOUT</title>
-        <link rel = "stylesheet" href = "../css/mainlayout.css">
-        <link rel = "stylesheet" href = "../css/checkout.css">
+        <link rel = "stylesheet" href = "./css/mainlayout.css">
+        <link rel = "stylesheet" href = "./css/checkout.css">  
         <script defer src="./mainlayout/dash.js"> </script>
         <script  src="./mainlayout/footer.js" defer> </script> 
     </head>
@@ -15,41 +15,20 @@
 
             <div class = "Checkout-Det">
                 <div class = "item-checkout">
-                    <div class="cart-header">
-                        <p id = "header1">Products</p>
-                        <p id = "header">Price</p>
-                        <p id = "header">Quantity</p>
-                        <p id = "header">Total</p>
+                    <div class="checkout-header">
+                        <p id = "ch-header1">Products</p>
+                        <p id = "ch-header">Price</p>
+                        <p id = "ch-header">Quantity</p>
+                        <p id = "ch-header">Total</p>
                     </div>
 
-                    <div class = "items-cart">
-                        <p>scus </p>
+                    <div id = "items-cart">
+                        <div id = "details"></div>
                     </div>
                 </div>
 
                 <div class = "cust-details">
-                    <table class = "customer-table">
-                        <tr>
-                            <td>Customer's Name: </td>
-                            <td>.</td>
-                        </tr>
-
-                        <tr>
-                            <td>Contact Number: </td>
-                            <td>.</td>
-                        </tr>
-
-                        <tr>
-                            <td>Delivery Address: </td>
-                            <td>.</td>
-                        </tr>
-
-                        <tr>
-                            <td>Message to Seller: </td>
-                            <td>.</td>
-                        </tr>
-                    </table>
-
+                    <div id = "cust-table"></div>
                 </div>
 
                 <div class = "proceed">
@@ -62,6 +41,7 @@
     <script defer src = "./js/chaproducts.js"></script>
     <script defer src = "./js/checkout.js"></script>
     <script defer src="./js/cart.js"> </script>
-    <!-- <add-footer></add-footer> -->
+    <!-- <script defer src = "./js/checkout.js"></script> -->
+    <add-footer></add-footer>
     </body>
 </html>
