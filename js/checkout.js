@@ -20,7 +20,8 @@ function placeOrder(){
 
     saveItems();
     console.log(newOrder);
-    localStorage.setItem('cartItems', JSON.stringify([]));
+    localStorage.setItem('cartItems', JSON.stringify([])); //clears cart array
+    console.log(allSales);
     
     
 

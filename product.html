@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="./css/product.css">
     <script  src="./mainlayout/footer.js" defer> </script>
     <script defer src="./mainlayout/dash.js"> </script>
-    <script  src="./js/chaproducts.js" defer> </script>
+   
     <script  src="./js/oneproduct.js" defer> </script>
+    
 </head>
 <body>
     
@@ -24,7 +25,7 @@
 
                 <div class="buttons" id="buttons">
                     <button class="h1bttn buy-now-btn">Buy Now</button>
-                    <button onclick="AddToCart()" class="add-to-cart-btn">Add to Cart</button>
+                    <button onclick = "addToCart()" id ="add-to-cart-btn">Add to Cart</button>
                 </div>
 
                 <div id="cart-popup" class="add-cart-popup">
@@ -37,6 +38,8 @@
     </main>
     
     <add-footer></add-footer>
-    
+    <script  src="./js/chaproducts.js" defer> </script>
+    <script src = "./js/cart.js" defer></script>
+     
 </body>
 </html>

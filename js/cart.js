@@ -1,28 +1,30 @@
-const products =
-[{
-    id: "1",
-    name: "SAMPLE A",
-    price: "20.00",
-    image: "../pics/kape.svg",
-    quantity: "10"
-},
+// const products =
+// [{
+//     id: "1",
+//     name: "SAMPLE A",
+//     price: "20.00",
+//     image: "../pics/kape.svg",
+//     quantity: "10"
+// },
 
-{
-    id: "2",
-    name: "SAMPLE B",
-    price: "35.00",
-    image: "../pics/coffee.svg"
-}, 
+// {
+//     id: "2",
+//     name: "SAMPLE B",
+//     price: "35.00",
+//     image: "../pics/coffee.svg"
+// }, 
 
-{
-    id: "3",
-    name: "SAMPLE C",
-    price: "50.00",
-    image: "../pics/non_caffein.svg"
-}
-]
+// {
+//     id: "3",
+//     name: "SAMPLE C",
+//     price: "50.00",
+//     image: "../pics/non_caffein.svg"
+// }
+// ]
+console.log(products);
 
 let cartItems = [];
+let allSales = [];
 
 //cart items
 function getStorage(){
@@ -33,7 +35,7 @@ function saveStorage(){
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
-let allSales = [];
+
 //checkout items
 function placedItems(){
     allSales = JSON.parse(localStorage.getItem('allSales')) || [];
@@ -45,41 +47,50 @@ function saveItems() {
 
 //cut
 
-const buttons = document.querySelectorAll('.js-add-to-cart');
+// const buttons = document.getElementById('add-to-cart-btn');
 
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-       const productID = button.getAttribute('data-productID');
-       addToCart(productID);
-       });
-});
+//     buttons.addEventListener('click', () => {
+//     const ProductID = getProductIdFromUrl();
+//     const productID = findProductById(ProductID);
+//     console.log(productID);
+//        addToCart(productID);
+//        });
 
-function addToCart(productID) {
+
+
+function addToCart() {
+    const productID = getProductIdFromUrl();
+    const product = findProductById(productID);
+
+    if (!product) {
+        alert("Product not found for ID:", productID);
+        return;
+    }
+
     getStorage();
-     
-    let matchingItem;
 
     // Check if the item is already in the cart
-    cartItems.forEach(item => {
-        if (item.id === productID) {
-            matchingItem = item;
-        }
-    });
+    let matchingItem = cartItems.find(item => item.id === product.id);
 
     if (matchingItem) {
-        // If the item is already in the cart, increase the quantity
         matchingItem.quantity++;
     } else {
-        // If the item is not in the cart, add it
         const newItem = {
-            id: productID,
+            id: product.id,
+            name: product.name,
+            price: product.price,
             quantity: 1
         };
         cartItems.push(newItem);
+        console.log("Added to cart:", newItem);
     }
-    
+
     saveStorage();
+    showCartPopup();
 }
+
+window.addToCart = addToCart;
+
 //remove item from cart
 function removeFromCart(productID) {
     getStorage();
@@ -134,6 +145,12 @@ function removeItem(productID) {
 
     cartItems.forEach((item) => {
         const matchingProduct = products.find(product => product.id === item.id);
+
+        if (!matchingProduct) {
+        alert("Product not found for cart item:", item);
+        return; // skip this item
+        }
+
         const itemTotal = matchingProduct.price * item.quantity;
         total += itemTotal;
 
