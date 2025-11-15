@@ -81,35 +81,25 @@ const products =
 },
 ]
 
-const productGridContainer = document.querySelector('.product-grid');
-/**
- * @param {string} selectedCategory
- * @returns {Array} 
- */
-function filterProductsByCategory(selectedCategory) {
-    const categoryToMatch = selectedCategory;
+const productGridContainer = document.querySelector('.product-grid'); //search the entire categhtml with the class and assigns it of the variable
 
-    if (categoryToMatch === 'ALL') {
+function getUrlParameter(paramName) { //this function is to know what categ was clicked in the sidebar
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(paramName); //retrieves the selected categ
+}
+ 
+function filterProductsByCategory(selectedCategory) { //filters the array by the selected categ
+    if (selectedCategory === 'ALL') { // if ALL, there's no filtering happen. it will return all the products.
         return products; 
     }
     
-    // Use the .filter() method to create a new array with the same products
-    const filteredList = products.filter(product => {
-        return product.category === categoryToMatch;
-    });
-    
-    return filteredList;
+    return products.filter(product => product.category === selectedCategory);
 }
 
-/**
- * this multi-line comment block is needed to support the param tag
- * we use multi-line to tell vs that this is a documentation not just a text.
- * @param {Array} productsToDisplay - name of the array and its type.
- */
 function displayProducts(productsToDisplay) {
-    productGridContainer.innerHTML = ''; // Clear previous products
+    productGridContainer.innerHTML = ''; // clears previous products to prevent mixing og products.
 
-    productsToDisplay.forEach(product => {
+    productsToDisplay.forEach(product => { //.forEach loops through every prod in array.
         const productLink = document.createElement('a'); //creates the link
         productLink.href = `product.html?id=${product.id}`; //its destination using id
         productLink.classList.add('link');
@@ -127,11 +117,35 @@ function displayProducts(productsToDisplay) {
         productGridContainer.appendChild(productLink); //the link
     });
 }
-//displays, updates the screen with the selected categ.
+// displays, updates the screen with the selected categ.
 function handleCategory(selectedCategory) {
-    const filteredProducts = filterProductsByCategory(selectedCategory);
+    const normalizedCategory = selectedCategory.toUpperCase(); //convert ALL CAPS
+    //calls these 2 functions
+    const filteredProducts = filterProductsByCategory(normalizedCategory);
     displayProducts(filteredProducts);
+
+    // setting the labels for each categ
+    const labelsContainer = document.getElementById('category');
+    if (labelsContainer) {
+        labelsContainer.innerHTML = '';
+        // label
+        const activeLabel = document.createElement('p');
+        // this is for styling 
+        activeLabel.classList.add('category', 'selected-category');
+        activeLabel.textContent = normalizedCategory;
+        
+        labelsContainer.appendChild(activeLabel);
+    }
 }
 
-displayProducts(products);
+/**
+ * Executes on page load to check the URL for a category and display products.
+ */
+function initializeProductPage() {
+    const urlCategory = getUrlParameter('category');
+    const initialCategory = urlCategory ? urlCategory.toUpperCase() : 'ALL';
+    
+    handleCategory(initialCategory);
+}
 
+initializeProductPage();
