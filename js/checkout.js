@@ -137,8 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Cart is empty!");
             return;
         }
-
+        
         const newOrder = {
+            customer: tempCustDetails[0],
             orderID: Date.now(),
             items: cartItems,
             date: new Date().toISOString()
@@ -147,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
         allSales.push(newOrder);
 
         saveItems();
-        
+        console.log(allSales);
         const ID = newOrder.orderID;
             placedContainer = `
                 <div id = "placed">
@@ -171,10 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 cartItems.forEach((item) => {
                     const matchingProduct = products.find(product => product.id === item.id);
                     const itemTotal = matchingProduct.price * item.quantity;
-                    const subTotal = matchingProduct.price - (matchingProduct * 0.12);
+                    const priceNoTax = matchingProduct.price / 1.12;
+                    const subTotal = priceNoTax * item.quantity;
                     subtotal += subTotal;
                     total += itemTotal;
-                    console.log(matchingProduct);
 
                 });
             const cust = tempCustDetails[0];
@@ -230,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     <div id = "amount">
                         <p id = "subtotal">Subtotal: ${subtotal.toFixed(2)}</p>
-                        <h4 id = "Total">TOTAL AMOUNT: Php.  ${total.toFixed(2)}</h4>
+                        <h4 id = "Total">TOTAL AMOUNT: Php. ${total.toFixed(2)}</h4>
                     </div>
                     <p>(Please take a screenshot of this receipt for future purposes.)</p>
                     <button class = "end-bttn">CLOSE</button>
@@ -247,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
     
     });
- console.log(document.querySelector('receipt-det'));
+
     window.addEventListener("click", (e) => {
         if(e.target == placed) placed.style.display = "none";
     });
