@@ -143,6 +143,7 @@ body{
     height: 10vh;
 }
 #name{
+    cursor: pointer;
     margin-left: 1vh;
     margin-top: 3vh;
 }
@@ -230,6 +231,7 @@ body{
     display: flex;
 }
 #d1{
+    cursor: pointer;
     margin-top: 20px;
     display: flex;
     width: 17vw;
@@ -257,6 +259,7 @@ body{
    gap: 10px;
 }
 .overview{
+    cursor: pointer;
     font-size: 16px;
     padding-top: 18px;
     margin-left: 1vw;

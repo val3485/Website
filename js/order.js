@@ -4,10 +4,10 @@ let orders =[
     order_num: 4543,
     name: "Clare Lubiano",
     item_qty: 2,
-    total: "2000.00",
+    total: "582.40",
     items: [
-      { product: "Latte", price: 250, qty: 2 },
-      { product: "Vanilla Ice cream", price: 150, qty: 1 }
+      { product: "Latte", price: 170, qty: 2 },
+      { product: "Vanilla Milkshake", price: 180, qty: 1 }
     ]
   },
   {
@@ -15,21 +15,21 @@ let orders =[
     order_num: 4529,
     name: "Sylvia Heart Sulla",
     item_qty: 2,
-    total: "1200.00",
+    total: "571.2",
     items: [
-      { product: "Cookie", price: 100, qty: 3 },
-      { product: "Latte", price: 300, qty: 1 }
+      { product: "Hot Chocolate", price: 170, qty: 3 }
     ]
   },
 {
     id: 3,
     order_num: 8958,
-    name: "Chybes Shantee Naje",
+    name: "Chybs Shantee Naje",
     item_qty: 2,
-    total: "2000.00",
+    total: "694.4",
     items: [
-      { product: "Coffee Beans", price: 250, qty: 2 },
-      { product: "Mug", price: 150, qty: 1 }
+      { product: "Americano", price: 250, qty: 1 },
+      { product: "Affogato", price: 220, qty: 1 },
+      { product: "Cold Brew with Milk", price: 150, qty: 1 }
     ]
   },
   {
@@ -37,10 +37,10 @@ let orders =[
     order_num: 3652,
     name: "John Doe",
     item_qty: 2,
-    total: "1200.00",
+    total: "347.2",
     items: [
-      { product: "Cookie", price: 100, qty: 3 },
-      { product: "Latte", price: 300, qty: 1 }
+      { product: "Flat White", price: 175, qty: 1 },
+      { product: "Espresso", price: 135, qty: 1 }
     ]
   },
 {
@@ -48,10 +48,10 @@ let orders =[
     order_num: 4521,
     name: "Alexis Mayocalba",
     item_qty: 2,
-    total: "2000.00",
+    total: "593.6",
     items: [
-      { product: "Coffee Beans", price: 250, qty: 2 },
-      { product: "Mug", price: 150, qty: 1 }
+      { product: "Vanilla Milkshake", price: 180, qty: 2 },
+      { product: "Hot Chocolate", price: 170, qty: 1 }
     ]
   },
   {
@@ -59,10 +59,9 @@ let orders =[
     order_num: 2356,
     name: "Donald Higgins",
     item_qty: 2,
-    total: "1200.00",
+    total: "336.00",
     items: [
-      { product: "Cookie", price: 100, qty: 3 },
-      { product: "Latte", price: 300, qty: 1 }
+      { product: "Lemonade", price: 100, qty: 3 }
     ]
   },
 {
@@ -70,10 +69,10 @@ let orders =[
     order_num: 1542,
     name: "Edward Liao",
     item_qty: 2,
-    total: "2000.00",
+    total: "490.00",
     items: [
-      { product: "Coffee Beans", price: 250, qty: 2 },
-      { product: "Mug", price: 150, qty: 1 }
+      { product: "Espresso", price: 135, qty: 2 },
+      { product: "Affogato", price: 220, qty: 1 }
     ]
   },
   {
@@ -81,10 +80,9 @@ let orders =[
     order_num: 8923,
     name: "Belle Tiu",
     item_qty: 2,
-    total: "1200.00",
+    total: "604.8",
     items: [
-      { product: "Cookie", price: 100, qty: 3 },
-      { product: "Latte", price: 300, qty: 1 }
+      { product: "Vanilla Milkshake", price: 180, qty: 3 }
     ]
   }
 ]

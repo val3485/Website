@@ -8,7 +8,7 @@ function addDashboard(){
 
             <div class="dashboard"">
                 <a href="./homepage.html" id="home"> 
-                    <div >
+                    <div>
                         <img id="logo" src="../pics/logo.svg">
                         <p id="name">
                             Purr n Pour
