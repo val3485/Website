@@ -64,10 +64,10 @@ function closeCartPopup() {
     }
 }
 
-function AddToCart() {
-    // it's the logic bruhh, i can't do that typa shi. logic so that the product chosen will add to the cart.
-    showCartPopup();
-}
+// function AddToCart() {
+//     // it's the logic bruhh, i can't do that typa shi. logic so that the product chosen will add to the cart.
+//     showCartPopup();
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     renderProductDetails();

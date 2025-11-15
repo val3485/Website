@@ -60,13 +60,12 @@ function addDashboard(){
 
 document.addEventListener("DOMContentLoaded", function (e) {
     addDashboard();
-});
-
-document.getElementById('abt_us').addEventListener('click', function(e) {
-  e.preventDefault(); 
-});
-document.getElementById('home').addEventListener('click', function(e) {
-  e.preventDefault(); 
+    document.getElementById('unset').addEventListener('click', function(e) {
+      e.preventDefault(); 
+    });
+    document.getElementById('home').addEventListener('click', function(e) {
+      e.preventDefault(); 
+    });
 });
 
 function sidebar (){
