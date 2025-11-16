@@ -29,7 +29,7 @@ main {
     box-sizing: border-box;
 }
 
-.category{
+#category{
     font-family: 'brsBold', sans-serif; 
     font-size: 32px;
     color: #452B1E; 

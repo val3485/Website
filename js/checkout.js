@@ -149,7 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         saveItems();
         console.log(allSales);
-        const ID = newOrder.orderID;
             placedContainer = `
                 <div id = "placed">
                     <p>ORDER PLACED!</p>
@@ -224,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     <p>----------------------------------------</p>
 
-                    <p id = "items">ITEMS: </p>
+                    <p id = "items">ITEMS: ${newOrder.items}</p>
                     <div id = "purchased"></div>
 
                     <p>----------------------------------------</p>
@@ -234,12 +233,19 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h4 id = "Total">TOTAL AMOUNT: Php. ${total.toFixed(2)}</h4>
                     </div>
                     <p>(Please take a screenshot of this receipt for future purposes.)</p>
-                    <button class = "end-bttn">CLOSE</button>
+                    <button id = "end-bttn">CLOSE</button>
                     </div>
                 `
                 receipt.innerHTML = receiptContainer;
             
                 receipt.style.display = "block";
+
+                const close = document.getElementById("end-bttn");
+                close.addEventListener("click", () => {
+                    // localStorage.setItem("tempCustDetails", JSON.stringify([]));
+                    // localStorage.setItem("cartItems", JSON.stringify([]));
+                    window.location.href = "../homepage.html";
+                });
 
             
         });

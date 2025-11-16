@@ -1,20 +1,18 @@
-/**
- * @param {Event} event - The form submission event.
- */
-function handleClientLogin(event) {
-    const VALID_USERNAME = "Shantee Naje";
+
+function ClientLogin(event) {
+    const VALID_USERNAME = "Shantee Naje"; //valid acc
     const VALID_PASSWORD = "purrnpour";
 
     // getting data
-    const usernameInput = document.getElementById('user').value;
-    const passwordInput = document.getElementById('pass').value;
+    const userInput = document.getElementById('user').value;
+    const passInput = document.getElementById('pass').value;
     
     // comparing
-    if (usernameInput === VALID_USERNAME && passwordInput === VALID_PASSWORD) {
+    if (userInput === VALID_USERNAME && passInput === VALID_PASSWORD) {
         
         // simulating "saving" the user's status by setting a flag in localStorage
         localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('currentUser', usernameInput);
+        localStorage.setItem('currentUser', userInput);
         
         // navigating to dasboard
         window.location.href = './adminDash.html';
