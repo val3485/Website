@@ -37,7 +37,6 @@ h1 {
     display:grid;
     grid-template-columns: 2fr 2fr 2fr 1fr;
     gap: 8vh;
-    
     margin-left: 50px;
 }
 
@@ -89,7 +88,7 @@ h1 {
 }
 
 
-td {
+.customer-table .det2 {
     line-height: 50px;
     width: 50vh;
     font-size: 20px;
@@ -123,6 +122,7 @@ td {
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-right: 100px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .proceed > button:hover {
@@ -174,7 +174,7 @@ td {
 }
 
 #placed > p {
-    font-family: 'afc';
+    font-family: 'brs';
     font-size: 20px;
     line-height: 20px;
 }
@@ -190,6 +190,7 @@ td {
     padding-right: 40px;
     padding-left: 40px;
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
 }   
 
 #placed > button:hover {
@@ -203,4 +204,46 @@ td {
     color:#452B1E;
     font-size: 32px;
     text-align: center;
+}
+
+.receipt-det {
+    font-family: 'afc';
+    font-size: 16px;
+    line-height: 5vh;
+}
+
+.details1 {
+    border-style: none;
+    margin: 0;   
+    
+}
+
+.receipt-det .det1, #items, #subtotal, #Total {
+    font-family: 'brsSemi';
+    font-size: 18px;
+    width: 21vh;
+    display: flex;
+    align-items: start;
+}
+
+#end-bttn {
+    margin-left: 37%;
+    border: none;
+    background-color: #9D9169;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'afc';
+    color: aliceblue;
+    padding-right: 40px;
+    padding-left: 40px;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+#end-bttn:hover {
+    background-color: #908359;
+}
+
+.item-table, #amount{
+    width: 100%;
 }

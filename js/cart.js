@@ -1,3 +1,13 @@
+//array of valid numbers
+const prefixes = [
+    "900","901","902","903","904","905","906","907","908","909",
+    "817","813","910","911","912","913","914","915","916","917","918","919",
+    "920","921","928","926","929","930","938","939","946","947","948","949",
+    "950","951","952","953","961","962","963","965","966","967","976","968",
+    "969","970","975","977","978","979","981","989","991","992","993","994",
+    "995","996","997","998","999"
+];
+
 let cartItems = [];
 let allSales = [];
 
@@ -11,7 +21,7 @@ function saveStorage(){
 }
 
 
-//checkout items
+//this array holds all sales of the shop
 function placedItems(){
     allSales = JSON.parse(localStorage.getItem('allSales')) || [];
 }
@@ -22,8 +32,9 @@ function saveItems() {
 
 //cut
 
+//add to cart via add to cart button
 function addToCart() {
-    const productID = getProductIdFromUrl();
+    const productID =   ProductIdUrl();
     const product = findProductById(productID);
 
     if (!product) {
@@ -50,7 +61,7 @@ function addToCart() {
     }
 
     saveStorage();
-    showCartPopup();
+    AddToCart();
 }
 
 window.addToCart = addToCart;
@@ -85,11 +96,8 @@ function addFromCart(productID) {
     saveStorage();
 
 }
-function removeItem(productID) {
-  cartItems = cartItems.filter(item => item.id !== productID);
-  localStorage.setItem('cartItems', JSON.stringify(cartItems));
-}
 
+//displaying orders in the cart
 getStorage();
 let cartContainer = ' ';
 let total = 0;
@@ -140,10 +148,21 @@ if (cartItems.length > 0) {
 document.querySelector('.total').innerText = `YOUR TOTAL AMOUNT IS: Php. ${total.toFixed(2)}`;
 
 
+function isValidPHNumber(num) {
+    num = num.trim();
+    if (num.startsWith("0")) {
+        const prefix = num.substring(1, 4);
+        return prefixes.includes(prefix) && num.length === 11;
+    } else if (num.startsWith("+63")) {
+        const prefix = num.substring(3, 6);
+        return prefixes.includes(prefix) && num.length === 13;
+    }
+    return false;
+}
 
+//checkout button
 document.addEventListener("DOMContentLoaded", () => {
     getStorage(); // load cart items
-    getCustDet();
     tempCustomerDet();
 
     const btn = document.getElementById('checkout-bttn');
@@ -172,15 +191,22 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const name = document.getElementById("name").value;
-        const num = document.getElementById("num").value;
-        const address = document.getElementById("address").value;
-        const message = document.getElementById("msg").value;
+        const name = document.getElementById("name").value.trim();
+        const num = document.getElementById("num").value.trim();
+        const address = document.getElementById("address").value.trim();
+        const message = document.getElementById("msg").value.trim();
 
         if(!name || !num || !address){
             alert("Please fill in all fields.");
             return;
         }
+
+
+        if(!isValidPHNumber(num)) {
+            alert("Please enter a valid Philippine mobile number (09XXXXXXXXX or +639XXXXXXXXX).");
+            return;
+        }
+
 
         const customerData = {
             Name: name,
@@ -193,7 +219,6 @@ document.addEventListener("DOMContentLoaded", () => {
         CustomerDetails.push(customerData);
 
         // Save to localStorage
-        saveDetails();
         tempSaveDetails();
 
         alert("Form submitted! Proceeding to checkout...");
