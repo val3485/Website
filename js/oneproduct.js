@@ -1,24 +1,16 @@
-/**
- *Extracts the 'id' query parameter from the current URL.
- * @returns {string | null} The product ID or null if not found.
- */
-function getProductIdFromUrl() { //this will perform the extraction
+
+function ProductIdUrl() { //this will perform the extraction of id
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('id');
 }
 
-/**
- * Finds a product in the global 'products' array by ID.
- * @param {string} id - The ID to search for.
- * @returns {object | undefined} The matching product object.
- */
-function findProductById(id) {
+function findProductById(id) { // this searches through the array to find prod that matches the id
     // 'products'- global variable defined in my other .js
     return products.find(product => product.id === id);
 }
 
-function renderProductDetails() {
-    const productId = getProductIdFromUrl();
+function ProductDetails() { //retrieve and dispaly specific prod data
+    const productId = ProductIdUrl();
     const product = findProductById(productId);
 
     const mainContainer = document.querySelector('main');
@@ -27,7 +19,7 @@ function renderProductDetails() {
     const priceElement = document.getElementById('price');
     const descriptionElement = document.getElementById('description');
     
-    if (product) {
+    if (product) { // checks if all is found 
         document.title = `${product.name} - Purr n Pour`;
         
         if (nameElement) {
@@ -35,7 +27,7 @@ function renderProductDetails() {
         } 
 
         if (priceElement) {
-            priceElement.textContent = `(₱${product.price.toFixed(2)})`; 
+            priceElement.textContent = `₱${product.price.toFixed(2)}`; //.toFixed(2) is to force the decimals
         }
 
         if (descriptionElement) {
@@ -50,25 +42,21 @@ function renderProductDetails() {
         
     }
 }
-function showCartPopup() {
+
+function AddToCart() {
     const popup = document.getElementById('cart-popup');
     if (popup) {
         popup.style.display = 'flex'; // shows the popup
     }
 }
 
-function closeCartPopup() {
+function closeCart() {
     const popup = document.getElementById('cart-popup');
     if (popup) {
         popup.style.display = 'none'; // hides the popup
     }
 }
 
-function AddToCart() {
-    // it's the logic bruhh, i can't do that typa shi. logic so that the product chosen will add to the cart.
-    showCartPopup();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    renderProductDetails();
+document.addEventListener('DOMContentLoaded', () => { //DOM is like a blueprint or the structure of the HTML page. it allows js to provide details.
+    ProductDetails(); 
 });

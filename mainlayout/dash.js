@@ -38,11 +38,11 @@ function addDashboard(){
                 <div id="d1">
                     <div>
                         <img src="./pics/hot_coffee.svg">
-                        <p><a href="./category.html?category=HOT-COFFEE">Hot Coffee</a></p>
+                        <p><a href="./category.html?category=HOT COFFEE">Hot Coffee</a></p>
                     </div>
                     <div>
                         <img src="./pics/coffee.svg">
-                        <p><a href="./category.html?category=COLD-COFFEE">Cold Coffee</a></p>
+                        <p><a href="./category.html?category=COLD COFFEE">Cold Coffee</a></p>
                     </div>
                     <div>
                         <img src="./pics/non_caffein.svg">

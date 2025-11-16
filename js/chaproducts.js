@@ -1,6 +1,6 @@
 const products =
 [{ //properties
-    category: "HOT-COFFEE",
+    category: "HOT COFFEE",
     id: "1",
     name: "Latte",
     price: 170.00,
@@ -8,7 +8,7 @@ const products =
     description: "Smooth and mellow. A gentle blend of espresso and steamed milk, our Latte captures the quiet and elegance of Purr & Pour Cafe."
 },
 {
-    category: "HOT-COFFEE",
+    category: "HOT COFFEE",
     id: "2",
     name: "Flat White",
     price: 175.00,
@@ -16,7 +16,7 @@ const products =
     description: "Silky and strong, with a fine layer of microfoam that embraces the espresso’s boldness. This drink embraces Purr & Pour’s beauty and minimalist grace."
 }, 
 {
-    category: "HOT-COFFEE",
+    category: "HOT COFFEE",
     id: "3",
     name: "Espresso",
     price: 135.00,
@@ -24,7 +24,7 @@ const products =
     description: "Strong, dark, and sincere. Purr & Pour’s Espresso represents pure intensity with no distractions. A single moment of focus in a cup."
 },
 { 
-    category: "COLD-COFFEE",
+    category: "COLD COFFEE",
     id: "4",
     name: "Affogato",
     price: 220.00,
@@ -32,7 +32,7 @@ const products =
     description: "A delicate blend of warmth and sweetness, espresso poured over creamy vanilla ice cream. The meeting of contrast and comfort, just like Purr & Pour’s balance between mystery and charm."
 },
 {
-    category: "COLD-COFFEE",
+    category: "COLD COFFEE",
     id: "5",
     name: "Americano ",
     price: 160.0,
@@ -40,7 +40,7 @@ const products =
     description: "Light, crisp, and refreshingly simple. This drink offers clarity and calm. A quiet reminder to pause and appreciate the still moments of the day."
 },
 {
-    category: "COLD-COFFEE",
+    category: "COLD COFFEE",
     id: "6",
     name: "Cold Brew with Milk",
     price: 165.00,
@@ -48,7 +48,7 @@ const products =
     description: "Steeped slowly and blended softly with milk. Purr & Pour’s Cold Brew with Milk embodies patience with grace. Its smooth, deep flavor invites you to unwind and savor the unhurried."
 },
 {
-    category: "COLD-COFFEE",
+    category: "COLD COFFEE",
     id: "7",
     name: "Caramel Macchiato",
     price: 175.00,
@@ -83,23 +83,23 @@ const products =
 
 const productGridContainer = document.querySelector('.product-grid'); //search the entire categhtml with the class and assigns it of the variable
 
-function getUrlParameter(paramName) { //this function is to know what categ was clicked in the sidebar
+function UrlParameter(paramName) { //this function is to know what categ was clicked in the sidebar
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(paramName); //retrieves the selected categ
 }
  
-function filterProductsByCategory(selectedCategory) { //filters the array by the selected categ
-    if (selectedCategory === 'ALL') { // if ALL, there's no filtering happen. it will return all the products.
+function ProductsByCateg(selectedCateg) { //filters the array by the selected categ
+    if (selectedCateg === 'ALL') { // if ALL, there's no filtering happen. it will return all the products.
         return products; 
     }
     
-    return products.filter(product => product.category === selectedCategory);
+    return products.filter(product => product.category === selectedCateg);
 }
 
-function displayProducts(productsToDisplay) {
+function displayProducts(prodToDisplay) {
     productGridContainer.innerHTML = ''; // clears previous products to prevent mixing og products.
 
-    productsToDisplay.forEach(product => { //.forEach loops through every prod in array.
+    prodToDisplay.forEach(product => { //.forEach loops through every prod in array.
         const productLink = document.createElement('a'); //creates the link
         productLink.href = `product.html?id=${product.id}`; //its destination using id
         productLink.classList.add('link');
@@ -118,10 +118,10 @@ function displayProducts(productsToDisplay) {
     });
 }
 // displays, updates the screen with the selected categ.
-function handleCategory(selectedCategory) {
-    const normalizedCategory = selectedCategory.toUpperCase(); //convert ALL CAPS
+function handleCateg(selectedCateg) {
+    const normalizedCategory = selectedCateg.toUpperCase(); //convert ALL CAPS
     //calls these 2 functions
-    const filteredProducts = filterProductsByCategory(normalizedCategory);
+    const filteredProducts = ProductsByCateg(normalizedCategory);
     displayProducts(filteredProducts);
 
     // setting the labels for each categ
@@ -138,14 +138,11 @@ function handleCategory(selectedCategory) {
     }
 }
 
-/**
- * Executes on page load to check the URL for a category and display products.
- */
-function initializeProductPage() {
-    const urlCategory = getUrlParameter('category');
-    const initialCategory = urlCategory ? urlCategory.toUpperCase() : 'ALL';
+function ProductPage() {
+    const urlCategory = UrlParameter('category');
+    const initialCategory = urlCategory ? urlCategory.toUpperCase() : 'ALL'; //default view
     
-    handleCategory(initialCategory);
+    handleCateg(initialCategory);
 }
 
-initializeProductPage();
+ProductPage();
