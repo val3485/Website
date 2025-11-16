@@ -95,6 +95,8 @@ h1 {
 }
 
 .det {
+    width: 100px;
+    word-break: break-all;
     text-indent: 30px;
     line-height: 20px;
     color:#452B1E;
@@ -209,10 +211,11 @@ h1 {
 .receipt-det {
     font-family: 'afc';
     font-size: 16px;
-    line-height: 5vh;
+    line-height: 30px;
 }
 
 .details1 {
+    word-break: break-all;
     border-style: none;
     margin: 0;   
     
