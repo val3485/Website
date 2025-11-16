@@ -11,6 +11,7 @@ const prefixes = [
 let cartItems = [];
 let allSales = [];
 
+
 //cart items
 function getStorage(){
     cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -75,12 +76,10 @@ function removeFromCart(productID) {
             if (item.quantity > 0) {
                 item.quantity--;
             }
-
-            else{
-                item.quantity = 0;
-            }
         }
     });  
+
+    cartItems = cartItems.filter(item => item.quantity > 0);
     
     saveStorage();
 }
@@ -164,7 +163,6 @@ function isValidPHNumber(num) {
 document.addEventListener("DOMContentLoaded", () => {
     getStorage(); // load cart items
     tempCustomerDet();
-
     const btn = document.getElementById('checkout-bttn');
     const chck = document.getElementById('checkout-details');
     const closeBtn = document.getElementById('close');
@@ -175,6 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(cartItems.length === 0){
             alert("Cart is empty! Can't checkout :<");
             return;
+           
         }
         chck.style.display = "block";
     });

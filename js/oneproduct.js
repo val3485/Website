@@ -60,3 +60,11 @@ function closeCart() {
 document.addEventListener('DOMContentLoaded', () => { //DOM is like a blueprint or the structure of the HTML page. it allows js to provide details.
     ProductDetails(); 
 });
+
+//added for buy now button
+const buyNOW = document.querySelector('.buy-now-btn');
+
+buyNOW.addEventListener("click", () => {
+    addToCart();
+    window.location.href = "../cart.html";
+});
