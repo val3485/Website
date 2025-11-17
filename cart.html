@@ -13,65 +13,62 @@
     </head>
 
     <body>
+        <div class="cart">
+            <div class="cart-header">
+                <p id = "header1">Products</p>
+                <p id = "header">Price</p>
+                <p id = "header">Quantity</p>
+                <p id = "header">Total</p>
+            </div>
+            <div class = "cart-details">
+                <div id = "container"></div>   
 
-
-            <div class="cart">
-                <div class="cart-header">
-                    <p id = "header1">Products</p>
-                    <p id = "header">Price</p>
-                    <p id = "header">Quantity</p>
-                    <p id = "header">Total</p>
-                </div>
-                <div class = "cart-details">
-                    <div id = "container"></div>   
-    
-                    <div class = "class">
-                        <p class = "total">
-                            
-                            <span id="total-amount">/span>
-                        </p>
-                         
-                        <div>
-                            <button id = "checkout-bttn">CHECKOUT?</button>
-                        </div>
+                <div class = "class">
+                    <p class = "total">
+                        
+                        <span id="total-amount">/span>
+                    </p>
+                     
+                    <div>
+                        <button id = "checkout-bttn">CHECKOUT?</button>
                     </div>
                 </div>
-    
-               
             </div>
-    
-            <div id = "checkout-details" class = checkout>
-    
-                <div class = "checkout-content">
-                    <span id = "close">&times;</span>
-    
-                    <h2>ENTER YOUR DETAILS</h2>
-    
-                    <form id = "checkoutForm">
-                        <label for = "name">Name: </label><br>
-                        <input type = "text" id = "name" placeholder="Enter your complete name" required autocomplete="off"><br><br>
-    
-                        <label for = "num">Contact Number: </label><br>
-                        <input type = "text" id = "num" placeholder = "09######### or +639#########" required autocomplete="off"><br><br>
-    
-                        <label for = "address">Delivery Address: </label><br>
-                        <input type = "text" id = "address" placeholder = "Enter delivery address" required autocomplete="off"><br><br>
-    
-                        <label for = "msg">Message to Seller: </label><br><br>
-                        <input type = "text" id = "msg" placeholder="Any message/request/concern?"><br><br>
-    
-                        <button type = "submit" id = "submit">Submit n' Checkout</button>
-                    </form>
-                </div>
-    
-    
-            </div>
-    
-            <script defer src="js/cart.js"> </script>  
-            <script defer src = "./js/checkout.js"></script>
-        
-        
-        <add-footer></add-footer>
 
+           
+        </div>
+
+        <div id = "checkout-details" class = checkout>
+
+            <div class = "checkout-content">
+                <span id = "close">&times;</span>
+
+                <h2>ENTER YOUR DETAILS</h2>
+
+                <form id = "checkoutForm">
+                    <label for = "name1">Name: </label><br>
+                    <input type = "text" id = "name1" placeholder="Enter your complete name" required autocomplete="off"><br><br>
+
+                    <label for = "num">Contact Number: </label><br>
+                    <input type = "text" id = "num" placeholder = "09######### or +639#########" required autocomplete="off"><br><br>
+
+                    <label for = "address">Delivery Address: </label><br>
+                    <input type = "text" id = "address" placeholder = "Enter delivery address" required autocomplete="off"><br><br>
+
+                    <label for = "msg">Message to Seller: </label><br><br>
+                    <input type = "text" id = "msg" placeholder="Any message/request/concern?"><br><br>
+
+                    <button type = "submit" id = "submit">Submit n' Checkout</button>
+                </form>
+            </div>
+
+
+        </div>
+
+    <script defer src="js/cart.js"> </script>  
+    <script defer src = "./js/checkout.js"></script>
+    
+    
+    <add-footer></add-footer>
     </body>
 </html>
