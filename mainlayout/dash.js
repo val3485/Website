@@ -7,7 +7,7 @@ function addDashboard(){
         <div id="dash">
 
             <div class="dashboard"">
-                <a href="./homepage.html" id="home"> 
+                <a href="../homepage.html" id="home"> 
                     <div>
                         <img id="logo" src="../pics/logo.svg">
                         <p id="name">
@@ -18,7 +18,12 @@ function addDashboard(){
                 <div id="end-div">
                     <p onclick="sidebar()">shop</p>
                    
-                    <p><a href="./aboutUs.html" id="unset">About us</a></p>
+                    <p>
+                        <a href="../aboutUs.html" id="unset">
+                            About us
+                        </a>
+                    </p>
+
                     <a href="./cart.html">
                         <img id="cart"  style="margin-bottom: 20px; width:40px;height:40px;" src="../pics/cart.svg">
                     </a>
