@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
+        const name = document.getElementById("name1").value.trim();
         const num = document.getElementById("num").value.trim();
         const address = document.getElementById("address").value.trim();
         const message = document.getElementById("msg").value.trim();
