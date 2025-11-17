@@ -14,7 +14,7 @@ let orders =[
     id: 2,
     order_num: 4529,
     name: "Sylvia Heart Sulla",
-    item_qty: 2,
+    item_qty: 1,
     total: "571.2",
     items: [
       { product: "Hot Chocolate", price: 170, qty: 3 }
@@ -24,7 +24,7 @@ let orders =[
     id: 3,
     order_num: 8958,
     name: "Chybs Shantee Naje",
-    item_qty: 2,
+    item_qty: 3,
     total: "694.4",
     items: [
       { product: "Americano", price: 250, qty: 1 },
@@ -58,7 +58,7 @@ let orders =[
     id: 6,
     order_num: 2356,
     name: "Donald Higgins",
-    item_qty: 2,
+    item_qty: 1,
     total: "336.00",
     items: [
       { product: "Lemonade", price: 100, qty: 3 }
@@ -79,7 +79,7 @@ let orders =[
     id: 8,
     order_num: 8923,
     name: "Belle Tiu",
-    item_qty: 2,
+    item_qty: 1,
     total: "604.8",
     items: [
       { product: "Vanilla Milkshake", price: 180, qty: 3 }

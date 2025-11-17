@@ -46,6 +46,27 @@
 .logodash{
     margin-left: 10px;
 }
+.dlogo {
+    width: 40px;
+    position: relative;
+    align-self: center;
+}
+.circle{
+    position: relative;
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 50% 50% 0 0;
+    bottom: 40px;
+}
+.d1m > div{
+    background-color: #E9D0A7;
+}
+.d2 > div{
+    background-color: #84592E;
+}
 .dashMain{
     padding: 20px;
 }
@@ -54,24 +75,47 @@
     font-family: 'brs';
 }
 .dashMain > div{
+    margin: 8vh 0 0 5vw;
     display: flex;
     gap: 5vw;
+
 }
 .dashMain > div > div{
-    background-color: #E9D0A7;
-    padding-left: 30px;
-    padding-right: 30px;
-    width: fit-content;
+    padding-top: 10px;
     text-align: center;
     border-radius: 10px;
+    z-index: 0;
+}
+.dashMain > div > div > h2{
+    font-weight: 100;
+}
+.d1m{
+    text-shadow: 0px 1px 2px rgb(0 0 0 / 0.30); 
+    background-color: #E9D0A7;
+    padding-left: 100px;
+    justify-content: center;
+    padding-right: 100px ;
+    color: #733015;
+    box-shadow: 0px 2px 5px rgb(0 0 0 / 0.80);
+}
+.d2{
+    text-shadow: 0px 1.5px 5px rgb(0 0 0 / 0.80); 
+    padding-left: 40px;
+    padding-right: 40px;
+    align-self: end;
+    background-color: #84592E;
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
 }
 .dashMain > div > div > h2{
     font-family: 'afc';
     font-size: 16px;
+    margin-top: -20px;
 }
 .dashMain > div > div > h1{
-    font-family: 'brs';
+    font-family: 'afc';
     font-size: 32px;
+    margin-top: -40px;
 }
 .space {
     flex-grow: 1; /*consumes all the empty vertical space */

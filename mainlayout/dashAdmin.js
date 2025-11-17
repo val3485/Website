@@ -9,7 +9,7 @@ class ComponentDash extends HTMLElement {
 
                 <div class="listAdmin" >
                     <img  src="../pics/dash.svg">
-                    <p>Dashboard</p>
+                    <p><a href="../adminDash.html" id="unset">Dashboard</a></p>
                 </div>
 
                 <div class="listAdmin">
