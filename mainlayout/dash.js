@@ -28,25 +28,25 @@ function addDashboard(){
 
             <div id="side-bar">
                 <div >
-                    <img id="logo"   src="../pics/logo.svg">
+                    <img id="logo"   src="./pics/logo.svg">
                     <p class="overview">
-                        Overview of products
+                        <a href="./category.html?category=ALL">Overview of products</a>
                     </p>
                 
                 </div>
 
                 <div id="d1">
                     <div>
-                        <img src="../pics/hot_coffee.svg">
-                        <p>Hot Coffee</p>
+                        <img src="./pics/hot_coffee.svg">
+                        <p><a href="./category.html?category=HOT COFFEE">Hot Coffee</a></p>
                     </div>
                     <div>
-                        <img src="../pics/coffee.svg">
-                        <p>Coffee</p>
+                        <img src="./pics/coffee.svg">
+                        <p><a href="./category.html?category=COLD COFFEE">Cold Coffee</a></p>
                     </div>
                     <div>
-                        <img src="../pics/non_caffein.svg">
-                        <p>Non-Caffeinated</p>
+                        <img src="./pics/non_caffein.svg">
+                        <p><a href="./category.html?category=NON-CAFFEINATED">Non-Caffeinated</a></p>
                     </div>
                 </div>
             </div>

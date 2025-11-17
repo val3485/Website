@@ -1,18 +1,12 @@
 let tempCustDetails = [];
 let CustomerDetails = [];
 
+//temporary array that holds one customer's details
 function tempCustomerDet() {
     tempCustDetails = JSON.parse(localStorage.getItem('tempCustDetails')) || [];
 }
 
-function getCustDet() {
-    CustomerDetails = JSON.parse(localStorage.getItem('CustomerDetails')) || [];
-}
-
-function saveDetails () {
-    localStorage.setItem('CustomerDetails', JSON.stringify(CustomerDetails));
-}
-
+//save
 function tempSaveDetails() {
     localStorage.setItem('tempCustDetails', JSON.stringify(tempCustDetails));
 }
@@ -52,12 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
     if (cartItems.length > 0) {
-        document.getElementById('details').innerHTML = orderContainer;
+        document.getElementById('details').innerHTML = orderContainer; 
     } else {
         document.getElementById('details').innerHTML = '<p class = "empty">No orders! Add to cart now! :<<</p>';
     }
 
 });
+
+let newOrder = null;
 
 //for displaying customer details
 document.addEventListener("DOMContentLoaded", () => {
@@ -69,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         customerContainer = `
                 <table class = "customer-table">
                     <tr>
-                        <td>Customer's Name: </td>
+                        <td class = "det2">Customer's Name: </td>
                     </tr>
 
                     <tr>
@@ -77,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </tr>
 
                     <tr>
-                        <td>Contact Number: </td>
+                        <td class = "det2">Contact Number: </td>
                     </tr>
 
                     <tr>
@@ -85,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </tr>
 
                     <tr>
-                        <td>Delivery Address: </td>
+                        <td class = "det2">Delivery Address: </td>
                     </tr>
 
                     <tr>
@@ -93,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </tr>
 
                     <tr>
-                        <td>Message to Seller: </td>
+                        <td class = "det2">Message to Seller: </td>
                     </tr>
                     
                     <tr>
@@ -130,25 +126,21 @@ document.addEventListener("DOMContentLoaded", () => {
     
     place.addEventListener("click", () => {
         getStorage();
-        placedItems();
+        
         tempCustomerDet();
 
         if(cartItems.length === 0) {
             alert("Cart is empty!");
             return;
         }
-
-        const newOrder = {
+        
+        newOrder = {
+            customer: tempCustDetails[0],
             orderID: Date.now(),
             items: cartItems,
             date: new Date().toISOString()
         };
 
-        allSales.push(newOrder);
-
-        saveItems();
-        
-        const ID = newOrder.orderID;
             placedContainer = `
                 <div id = "placed">
                     <p>ORDER PLACED!</p>
@@ -163,82 +155,119 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const receiptBttn = document.getElementById('show-receipt');
 
-        receiptBttn.addEventListener("click", () => {
+        // Remove previous listeners to avoid duplicates
+        receiptBttn.replaceWith(receiptBttn.cloneNode(true));
+        const newReceiptBttn = document.getElementById('show-receipt');
+
+        newReceiptBttn.addEventListener("click", () => {
             getStorage();
+            placedItems();
             tempCustomerDet();
                 let total = 0;
                 let subtotal = 0;
                 cartItems.forEach((item) => {
                     const matchingProduct = products.find(product => product.id === item.id);
                     const itemTotal = matchingProduct.price * item.quantity;
-                    const subTotal = matchingProduct.price - (matchingProduct * 0.12);
+                    const priceNoTax = matchingProduct.price / 1.12;
+                    const subTotal = priceNoTax * item.quantity;
                     subtotal += subTotal;
                     total += itemTotal;
-                    console.log(matchingProduct);
 
                 });
+
+                const itemListHTML = cartItems.map(item => {
+                    const matchingProduct = products.find(product => product.id === item.id);
+                    const total = (matchingProduct.price * item.quantity).toFixed(2);
+
+                    return `
+                        <tr>
+                            
+                            <td class = "details1">${matchingProduct.name} x ${item.quantity}</td>
+                            <td class = "details1" style="text-align:right;">₱${total}</td>
+                        </tr>
+                    `;
+                }).join("");
+
+
             const cust = tempCustDetails[0];
                 receiptContainer = `
                     <div class = "receipt-det">
                     <h2>THANK YOU FOR PURCHASING IN OUR SHOP!</h2>
 
                     <div id = "customer-det">
-                        <table class = "customer-table">
+                        <table class = "customer-details">
                             <tr>
-                                <td>Customer's Name: </td>
+                                <td class = "det1">Customer's Name: </td>
+                                <td class = "details1" >${cust.Name}</td>
                             </tr>
 
                             <tr>
-                                <td class = "det" >${cust.Name}</td>
+                                <td class = "det1">Contact Number: </td>
+                                <td class = "details1">${cust.ContactNumber}</td>
                             </tr>
 
                             <tr>
-                                <td>Contact Number: </td>
+                                <td class = "det1">Delivery Address: </td>
+                                <td class = "details1">${cust.Address}</td>
                             </tr>
 
                             <tr>
-                                <td class = "det">${cust.ContactNumber}</td>
-                            </tr>
-
-                            <tr>
-                                <td>Delivery Address: </td>
-                            </tr>
-
-                            <tr>
-                                <td class = "det">${cust.Address}</td>
-                            </tr>
-
-                            <tr>
-                                <td>Message to Seller: </td>
+                                <td class = "det1">Message to Seller: </td>
+                                <td class = "details1">${cust.Message}</td>
                             </tr>
                             
-                            <tr>
-                            <td class = "det">${cust.Message}</td>
-                            </tr>
-
                         </table>
 
                         
                     </div>
 
-                    <p>----------------------------------------</p>
+                    <p style = "letter-spacing: 2px; margin: 0">-----------------------------------------------------------------------------------</p>
 
-                    <p id = "items">ITEMS: </p>
-                    <div id = "purchased"></div>
+                    
+                    <table class="item-table">
+                        <tr>
+                            <td id = "items">ITEMS: </td>
+                        </tr>
+                        ${itemListHTML}
+                    </table>
 
-                    <p>----------------------------------------</p>
 
-                    <div id = "amount">
-                        <p id = "subtotal">Subtotal: ${subtotal.toFixed(2)}</p>
-                        <h4 id = "Total">TOTAL AMOUNT: Php.  ${total.toFixed(2)}</h4>
-                    </div>
+                    <p style = "letter-spacing: 2px; margin: 0">-----------------------------------------------------------------------------------</p>
+
+                    <table id = "amount">
+                        <tr>
+                            <td id = "subtotal">Subtotal:</td>
+                            <td class = "details1" style = "text-align:right"> ₱${subtotal.toFixed(2)}</td>
+                        </tr>
+
+                        <tr>
+                        <td id = "Total">TOTAL AMOUNT: </td>
+                        <td class = "details1" style = "text-align:right; font-weight: bold;">₱${total.toFixed(2)}</td>
+                        </td>
+                    </table>
                     <p>(Please take a screenshot of this receipt for future purposes.)</p>
-                    <button class = "end-bttn">CLOSE</button>
+                    <button id = "end-bttn">CLOSE</button>
                     </div>
                 `
                 receipt.innerHTML = receiptContainer;
             
                 receipt.style.display = "block";
+                
+                if (newOrder) {
+                    allSales.push(newOrder);
+                    saveItems();
+                    newOrder = null; // prevent duplicate push
+                }
+                console.log(newOrder);
+                console.log(allSales);
+
+                const close = document.getElementById("end-bttn");
+                close.addEventListener("click", () => {
+                   
+                    localStorage.setItem("tempCustDetails", JSON.stringify([]));
+                    localStorage.setItem("cartItems", JSON.stringify([]));
+                    window.location.href = "../homepage.html";
+                });
 
             
         });
@@ -247,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
     
     });
- console.log(document.querySelector('receipt-det'));
+
     window.addEventListener("click", (e) => {
         if(e.target == placed) placed.style.display = "none";
     });
