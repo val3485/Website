@@ -12,11 +12,6 @@ class ComponentDash extends HTMLElement {
                     <p><a href="../adminDash.html" id="unset">Dashboard</a></p>
                 </div>
 
-                <div class="listAdmin">
-                    <img  src="../pics/products.svg">
-                    <p>Products</p>
-                </div>
-
 
                 <div class="listAdmin">
                     <img  src="../pics/orders.svg">
@@ -27,11 +22,6 @@ class ComponentDash extends HTMLElement {
                     </p>
                 </div>
 
-
-                <div class="listAdmin">
-                    <img  src="../pics/receipt.svg">
-                    <p>Receipt List</p>
-                </div>
 
                 <div class="sign-out">
                         <div class="listAdmin">
